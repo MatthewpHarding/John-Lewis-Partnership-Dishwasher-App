@@ -1,0 +1,10 @@
+.DS_Store
+.Trashes
+*.swp
+
+DerivedData/
+build/
+*.xccheckout
+xcuserdata/
+*.xcuserstate
+*.pbxuser
