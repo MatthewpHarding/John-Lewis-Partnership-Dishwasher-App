@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct URLRequestManager {
+struct URLRequestManager: URLRequestExecution {
+    
+    func executeURLRequest(urlRequest: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: urlRequest, completionHandler: completion).resume()
+    }
     
 }
