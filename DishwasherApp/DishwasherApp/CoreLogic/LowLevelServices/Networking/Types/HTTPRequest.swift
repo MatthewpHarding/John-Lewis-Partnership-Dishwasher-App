@@ -79,31 +79,13 @@ enum HTTPStatusCodeDomain: Int {
     }
 }
 
-struct HTTPRequest {
-    
-    enum HTTPMethod: String {
-        case get = "GET"
-        case post = "POST"
-        case put = "PUT"
-        case delete = "DELETE"
-        case head = "HEAD"
-        case options = "OPTIONS"
-        case trace = "TRACE"
-        case connect = "CONNECT"
-    }
-    
-    let path: URL
-    let method: HTTPMethod
-    let headers: [String: String]?
-    let body: [String: Any]?
-    let timeoutInterval: TimeInterval
-    
-    init(path: URL, method: HTTPMethod, headers: [String : String]?, body: [String: Any]?, timeoutInterval: TimeInterval = 15) {
-        self.path = path
-        self.method = method
-        self.headers = headers
-        self.body = body
-        self.timeoutInterval = timeoutInterval
-    }
-    
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
+    case head = "HEAD"
+    case options = "OPTIONS"
+    case trace = "TRACE"
+    case connect = "CONNECT"
 }
