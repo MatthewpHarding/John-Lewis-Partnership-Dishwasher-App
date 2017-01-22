@@ -108,6 +108,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MdY-Bm-407"/>
+                    <connections>
+                        <outlet property="collectionView" destination="PJi-ll-sJp" id="7uS-cc-t3J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXD-VY-ov7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

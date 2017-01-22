@@ -10,10 +10,17 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet var collectionView: UICollectionView!
+    
+    let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
+    var searchResult: SearchResult?
+    
+    // MARK:- UIViewController Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        refresh(withSearchTerm: "dishwasher")
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,25 +39,54 @@ class SearchViewController: UIViewController {
     }
     */
 
+    // MARK:- Reload Data
+    
+    fileprivate func reloadData() {
+        collectionView.reloadData()
+    }
 }
 
 // MARK:- UICollectionView DataSource
 
 extension SearchViewController: UICollectionViewDataSource {
     
-    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 10
+        return searchResult?.products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell else {
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell,
+        let searchResult = self.searchResult,
+        let product = searchResult.products[safe: indexPath.row]
+        else {
             return UICollectionViewCell()
         }
         
-        cell.titleLabel.text = "Test"
-        cell.subtitleLabel.text = "subtest"
+        cell.titleLabel.text = product.title
+        cell.subtitleLabel.text = product.price.now
         
         return cell
+    }
+}
+
+// MARK:- Product Search API
+
+extension SearchViewController {
+    
+    fileprivate func refresh(withSearchTerm searchTerm: String) {
+        remoteProductAPI.search(for: searchTerm) { [weak self] result in
+            
+            DispatchQueue.main.async()  {
+                switch result {
+                case .success(let searchResult):
+                    self?.searchResult = searchResult
+                    self?.reloadData()
+                    
+                case .error(let error): break
+                    // TODO display a retry screen
+                }
+            }
+        }
     }
 }

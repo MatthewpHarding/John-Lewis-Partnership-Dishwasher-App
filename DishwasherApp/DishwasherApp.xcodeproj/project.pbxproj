@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39F3F454AC017C2B88447580 /* Pods_DishwasherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99612995AB09D16967452979 /* Pods_DishwasherApp.framework */; };
+		546B70311E356AB10005DF3B /* FeatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70301E356AB10005DF3B /* FeatureFactory.swift */; };
+		546B703A1E3570290005DF3B /* CollectionType+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70381E3570290005DF3B /* CollectionType+SafeIndex.swift */; };
 		5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999191E33F9E9004565E1 /* AppDelegate.swift */; };
 		547999211E33F9E9004565E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5479991F1E33F9E9004565E1 /* Main.storyboard */; };
 		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		546B70301E356AB10005DF3B /* FeatureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureFactory.swift; sourceTree = "<group>"; };
+		546B70381E3570290005DF3B /* CollectionType+SafeIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+SafeIndex.swift"; sourceTree = "<group>"; };
 		547999161E33F9E9004565E1 /* DishwasherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwasherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547999191E33F9E9004565E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547999201E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		546B70361E3570290005DF3B /* SwiftFoundationEnhancements */ = {
+			isa = PBXGroup;
+			children = (
+				546B70371E3570290005DF3B /* Extensions */,
+			);
+			path = SwiftFoundationEnhancements;
+			sourceTree = "<group>";
+		};
+		546B70371E3570290005DF3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				546B70381E3570290005DF3B /* CollectionType+SafeIndex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5479990D1E33F9E9004565E1 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +164,7 @@
 		547999181E33F9E9004565E1 /* DishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
+				546B70361E3570290005DF3B /* SwiftFoundationEnhancements */,
 				548295771E355E8300F5EA9E /* Presentation */,
 				5479993F1E34BF58004565E1 /* Core Logic */,
 				547999191E33F9E9004565E1 /* AppDelegate.swift */,
@@ -168,6 +189,7 @@
 		5479993F1E34BF58004565E1 /* Core Logic */ = {
 			isa = PBXGroup;
 			children = (
+				546B70301E356AB10005DF3B /* FeatureFactory.swift */,
 				5482953E1E35063300F5EA9E /* Remote Product API */,
 				547999511E34C09F004565E1 /* Global Utilities */,
 				547999401E34BF58004565E1 /* Low Level Services */,
@@ -570,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546B703A1E3570290005DF3B /* CollectionType+SafeIndex.swift in Sources */,
 				5479995C1E34C09F004565E1 /* Result.swift in Sources */,
 				548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */,
 				548295651E3523F700F5EA9E /* SearchResult.swift in Sources */,
@@ -592,6 +615,7 @@
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
 				548295451E35066100F5EA9E /* Product.swift in Sources */,
 				548295471E3507CB00F5EA9E /* Networking.swift in Sources */,
+				546B70311E356AB10005DF3B /* FeatureFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
