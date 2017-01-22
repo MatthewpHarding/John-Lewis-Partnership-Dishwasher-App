@@ -7,6 +7,6 @@
 //
 
 enum Result<T, E: Error> {
-    case Success(T)
-    case Error(E)
+    case success(T)
+    case error(E)
 }
