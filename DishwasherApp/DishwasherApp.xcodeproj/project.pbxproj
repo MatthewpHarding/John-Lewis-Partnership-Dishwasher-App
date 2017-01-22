@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999191E33F9E9004565E1 /* AppDelegate.swift */; };
+		5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479991B1E33F9E9004565E1 /* MasterViewController.swift */; };
+		5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479991D1E33F9E9004565E1 /* DetailViewController.swift */; };
+		547999211E33F9E9004565E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5479991F1E33F9E9004565E1 /* Main.storyboard */; };
+		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
+		547999261E33F9E9004565E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547999241E33F9E9004565E1 /* LaunchScreen.storyboard */; };
+		547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999301E33F9E9004565E1 /* DishwasherAppTests.swift */; };
+		547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999431E34BF58004565E1 /* NetworkingManager.swift */; };
+		547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */; };
+		5479995C1E34C09F004565E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999571E34C09F004565E1 /* Result.swift */; };
+		547999601E34C104004565E1 /* URLRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479995F1E34C104004565E1 /* URLRequestManager.swift */; };
+		547999651E34C49F004565E1 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999641E34C49F004565E1 /* NetworkingError.swift */; };
+		5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999691E34CAAB004565E1 /* URLRequestExecution.swift */; };
+		5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479996B1E34E0D8004565E1 /* HTTPRequest.swift */; };
+		547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999701E34E5D4004565E1 /* HTTPRequestTest.swift */; };
+		548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */; };
+		548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295361E34F34400F5EA9E /* JSONSerializer.swift */; };
+		548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */; };
+		5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5479992D1E33F9E9004565E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5479990E1E33F9E9004565E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 547999151E33F9E9004565E1;
+			remoteInfo = DishwasherApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		547999161E33F9E9004565E1 /* DishwasherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwasherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		547999191E33F9E9004565E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5479991B1E33F9E9004565E1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		5479991D1E33F9E9004565E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		547999201E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		547999221E33F9E9004565E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		547999251E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		547999271E33F9E9004565E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5479992C1E33F9E9004565E1 /* DishwasherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwasherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		547999301E33F9E9004565E1 /* DishwasherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherAppTests.swift; sourceTree = "<group>"; };
+		547999321E33F9E9004565E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547999431E34BF58004565E1 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTest.swift; sourceTree = "<group>"; };
+		547999571E34C09F004565E1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5479995F1E34C104004565E1 /* URLRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestManager.swift; sourceTree = "<group>"; };
+		547999641E34C49F004565E1 /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		547999691E34CAAB004565E1 /* URLRequestExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExecution.swift; sourceTree = "<group>"; };
+		5479996B1E34E0D8004565E1 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		547999701E34E5D4004565E1 /* HTTPRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTest.swift; sourceTree = "<group>"; };
+		548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingErrorTests.swift; sourceTree = "<group>"; };
+		548295361E34F34400F5EA9E /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManager.swift; sourceTree = "<group>"; };
+		5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManagerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		547999131E33F9E9004565E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547999291E33F9E9004565E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5479990D1E33F9E9004565E1 = {
+			isa = PBXGroup;
+			children = (
+				547999181E33F9E9004565E1 /* DishwasherApp */,
+				5479992F1E33F9E9004565E1 /* DishwasherAppTests */,
+				547999171E33F9E9004565E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		547999171E33F9E9004565E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				547999161E33F9E9004565E1 /* DishwasherApp.app */,
+				5479992C1E33F9E9004565E1 /* DishwasherAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		547999181E33F9E9004565E1 /* DishwasherApp */ = {
+			isa = PBXGroup;
+			children = (
+				5479993F1E34BF58004565E1 /* Core Logic */,
+				547999191E33F9E9004565E1 /* AppDelegate.swift */,
+				5479991B1E33F9E9004565E1 /* MasterViewController.swift */,
+				5479991D1E33F9E9004565E1 /* DetailViewController.swift */,
+				5479991F1E33F9E9004565E1 /* Main.storyboard */,
+				547999221E33F9E9004565E1 /* Assets.xcassets */,
+				547999241E33F9E9004565E1 /* LaunchScreen.storyboard */,
+				547999271E33F9E9004565E1 /* Info.plist */,
+			);
+			path = DishwasherApp;
+			sourceTree = "<group>";
+		};
+		5479992F1E33F9E9004565E1 /* DishwasherAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5479994B1E34BF90004565E1 /* CoreLogic */,
+				547999301E33F9E9004565E1 /* DishwasherAppTests.swift */,
+				547999321E33F9E9004565E1 /* Info.plist */,
+			);
+			path = DishwasherAppTests;
+			sourceTree = "<group>";
+		};
+		5479993F1E34BF58004565E1 /* Core Logic */ = {
+			isa = PBXGroup;
+			children = (
+				547999511E34C09F004565E1 /* Global Utilities */,
+				547999401E34BF58004565E1 /* Low Level Services */,
+			);
+			name = "Core Logic";
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		547999401E34BF58004565E1 /* Low Level Services */ = {
+			isa = PBXGroup;
+			children = (
+				547999411E34BF58004565E1 /* Networking */,
+			);
+			name = "Low Level Services";
+			path = LowLevelServices;
+			sourceTree = "<group>";
+		};
+		547999411E34BF58004565E1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				547999681E34CAAB004565E1 /* Protocol */,
+				547999631E34C49F004565E1 /* Types */,
+				547999421E34BF58004565E1 /* Managers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		547999421E34BF58004565E1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				547999431E34BF58004565E1 /* NetworkingManager.swift */,
+				5479995F1E34C104004565E1 /* URLRequestManager.swift */,
+				548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5479994B1E34BF90004565E1 /* CoreLogic */ = {
+			isa = PBXGroup;
+			children = (
+				5479994C1E34BF90004565E1 /* LowLevelServices */,
+			);
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		5479994C1E34BF90004565E1 /* LowLevelServices */ = {
+			isa = PBXGroup;
+			children = (
+				5479994D1E34BF90004565E1 /* Networking */,
+			);
+			path = LowLevelServices;
+			sourceTree = "<group>";
+		};
+		5479994D1E34BF90004565E1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5479996F1E34E5D4004565E1 /* Types */,
+				5479994E1E34BF90004565E1 /* Managers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5479994E1E34BF90004565E1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */,
+				5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		547999511E34C09F004565E1 /* Global Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				547999551E34C09F004565E1 /* Swift Foundation Enhancements */,
+			);
+			path = "Global Utilities";
+			sourceTree = "<group>";
+		};
+		547999551E34C09F004565E1 /* Swift Foundation Enhancements */ = {
+			isa = PBXGroup;
+			children = (
+				547999561E34C09F004565E1 /* Compounds */,
+			);
+			path = "Swift Foundation Enhancements";
+			sourceTree = "<group>";
+		};
+		547999561E34C09F004565E1 /* Compounds */ = {
+			isa = PBXGroup;
+			children = (
+				547999571E34C09F004565E1 /* Result.swift */,
+			);
+			path = Compounds;
+			sourceTree = "<group>";
+		};
+		547999631E34C49F004565E1 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				5479996B1E34E0D8004565E1 /* HTTPRequest.swift */,
+				547999641E34C49F004565E1 /* NetworkingError.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		547999681E34CAAB004565E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				547999691E34CAAB004565E1 /* URLRequestExecution.swift */,
+				548295361E34F34400F5EA9E /* JSONSerializer.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5479996F1E34E5D4004565E1 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				547999701E34E5D4004565E1 /* HTTPRequestTest.swift */,
+				548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		547999151E33F9E9004565E1 /* DishwasherApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547999351E33F9E9004565E1 /* Build configuration list for PBXNativeTarget "DishwasherApp" */;
+			buildPhases = (
+				547999121E33F9E9004565E1 /* Sources */,
+				547999131E33F9E9004565E1 /* Frameworks */,
+				547999141E33F9E9004565E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DishwasherApp;
+			productName = DishwasherApp;
+			productReference = 547999161E33F9E9004565E1 /* DishwasherApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5479992B1E33F9E9004565E1 /* DishwasherAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547999381E33F9E9004565E1 /* Build configuration list for PBXNativeTarget "DishwasherAppTests" */;
+			buildPhases = (
+				547999281E33F9E9004565E1 /* Sources */,
+				547999291E33F9E9004565E1 /* Frameworks */,
+				5479992A1E33F9E9004565E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5479992E1E33F9E9004565E1 /* PBXTargetDependency */,
+			);
+			name = DishwasherAppTests;
+			productName = DishwasherAppTests;
+			productReference = 5479992C1E33F9E9004565E1 /* DishwasherAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5479990E1E33F9E9004565E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Mobile Sandpit LTD";
+				TargetAttributes = {
+					547999151E33F9E9004565E1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SMPWKXPHUW;
+						ProvisioningStyle = Automatic;
+					};
+					5479992B1E33F9E9004565E1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SMPWKXPHUW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 547999151E33F9E9004565E1;
+					};
+				};
+			};
+			buildConfigurationList = 547999111E33F9E9004565E1 /* Build configuration list for PBXProject "DishwasherApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5479990D1E33F9E9004565E1;
+			productRefGroup = 547999171E33F9E9004565E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547999151E33F9E9004565E1 /* DishwasherApp */,
+				5479992B1E33F9E9004565E1 /* DishwasherAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		547999141E33F9E9004565E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547999261E33F9E9004565E1 /* LaunchScreen.storyboard in Resources */,
+				547999231E33F9E9004565E1 /* Assets.xcassets in Resources */,
+				547999211E33F9E9004565E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5479992A1E33F9E9004565E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		547999121E33F9E9004565E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5479995C1E34C09F004565E1 /* Result.swift in Sources */,
+				548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */,
+				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
+				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
+				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
+				5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */,
+				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
+				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
+				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
+				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
+				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547999281E33F9E9004565E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */,
+				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
+				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
+				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
+				5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5479992E1E33F9E9004565E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 547999151E33F9E9004565E1 /* DishwasherApp */;
+			targetProxy = 5479992D1E33F9E9004565E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5479991F1E33F9E9004565E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547999201E33F9E9004565E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		547999241E33F9E9004565E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547999251E33F9E9004565E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		547999331E33F9E9004565E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		547999341E33F9E9004565E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		547999361E33F9E9004565E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SMPWKXPHUW;
+				INFOPLIST_FILE = DishwasherApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		547999371E33F9E9004565E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SMPWKXPHUW;
+				INFOPLIST_FILE = DishwasherApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		547999391E33F9E9004565E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SMPWKXPHUW;
+				INFOPLIST_FILE = DishwasherAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishwasherApp.app/DishwasherApp";
+			};
+			name = Debug;
+		};
+		5479993A1E33F9E9004565E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SMPWKXPHUW;
+				INFOPLIST_FILE = DishwasherAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishwasherApp.app/DishwasherApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		547999111E33F9E9004565E1 /* Build configuration list for PBXProject "DishwasherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547999331E33F9E9004565E1 /* Debug */,
+				547999341E33F9E9004565E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547999351E33F9E9004565E1 /* Build configuration list for PBXNativeTarget "DishwasherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547999361E33F9E9004565E1 /* Debug */,
+				547999371E33F9E9004565E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547999381E33F9E9004565E1 /* Build configuration list for PBXNativeTarget "DishwasherAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547999391E33F9E9004565E1 /* Debug */,
+				5479993A1E33F9E9004565E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5479990E1E33F9E9004565E1 /* Project object */;
+}
