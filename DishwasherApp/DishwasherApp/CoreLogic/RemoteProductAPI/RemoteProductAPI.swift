@@ -22,7 +22,14 @@ struct RemoteProductAPI {
    
     func search(for term: String, pageSize: Int = 20, completion: @escaping (Result<SearchResult, RemoteProductAPIError>) -> Void) {
         
-        guard let url = URL(string: "https://api.johnlewis.com/v1/products/search?q=\(term)&key=\(apiKey)&pageSize=\(pageSize)") else {
+        let searchTermQueryItem = URLQueryItem(name: "q", value: term)
+        let apiKeyQueryItem = URLQueryItem(name: "key", value: apiKey)
+        let pageSizeQueryItem = URLQueryItem(name: "pageSize", value: "\(pageSize)")
+        
+        var urlComponents = URLComponents(string: "https://api.johnlewis.com/v1/products/search")
+        urlComponents?.queryItems = [searchTermQueryItem, apiKeyQueryItem, pageSizeQueryItem]
+        
+        guard let url = urlComponents?.url else {
             completion(.error(.couldNotProccessRequest))
             return
         }

@@ -11,15 +11,11 @@ import XCTest
 
 class RemoteProductAPITests: XCTestCase {
     
+    // MARK:- Networking Tests
+    
     func testSuccessfulResponse() {
         
-        // Generate Testable Search Result
-        let price = Price(now: "39.95", currency: "GBP")
-        guard let imageURL = URL(string: "https://api.johnlewis.com/images/1") else {
-            XCTFail("Could not successfuly generate a URL")
-            return
-        }
-        let product = Product(identifier: "123456789", title: "testTitle", price: price, imageUrl: imageURL)
+        let product = testableProduct()
         let searchResult = SearchResult(products: [product], results: 30)
         
         let parserResponseResult: Result<SearchResult, ProductParserError> = .success(searchResult)
@@ -58,14 +54,7 @@ class RemoteProductAPITests: XCTestCase {
         }
     }
     
-    private func testableProduct() -> Product {
-        let price = Price(now: "39.95", currency: "GBP")
-        guard let imageURL = URL(string: "https://api.johnlewis.com/images/1") else {
-            XCTFail("Could not successfuly generate a URL")
-            fatalError()
-        }
-        return Product(identifier: "123456789", title: "testTitle", price: price, imageUrl: imageURL)
-    }
+    // MARK- Search Terms
     
     func testSearchTerms() {
         
@@ -77,7 +66,7 @@ class RemoteProductAPITests: XCTestCase {
         executeAndTestSuccessfulSearch(for: "±§@£$%^&*()_+=`~")
     }
     
-    func executeAndTestSuccessfulSearch(for term: String) {
+    private func executeAndTestSuccessfulSearch(for term: String) {
         
         let product = testableProduct()
         let searchResult = SearchResult(products: [product], results: 30)
@@ -114,5 +103,12 @@ class RemoteProductAPITests: XCTestCase {
         }
     }
     
+    private func testableProduct() -> Product {
+        let price = Price(now: "39.95", currency: "GBP")
+        guard let imageURL = URL(string: "https://api.johnlewis.com/images/1") else {
+            XCTFail("Could not successfuly generate a URL")
+            fatalError()
+        }
+        return Product(identifier: "123456789", title: "testTitle", price: price, imageUrl: imageURL)
+    }
 }
-
