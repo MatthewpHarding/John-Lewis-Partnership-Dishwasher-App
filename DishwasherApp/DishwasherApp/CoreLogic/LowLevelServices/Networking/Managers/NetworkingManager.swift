@@ -21,6 +21,12 @@ struct NetworkingManager {
         
         urlRequestExecuter.executeURLRequest(urlRequest: urlRequest) {  (responseData: Data?, urlResponse: URLResponse?, error: Error?) in
             
+            // handle networking errors
+            if let urlError = error as? NSError {
+                completion(.error(NetworkingError(urlError: urlError)))
+                return
+            }
+            
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
                 completion(.error(.unknown))
                 return
