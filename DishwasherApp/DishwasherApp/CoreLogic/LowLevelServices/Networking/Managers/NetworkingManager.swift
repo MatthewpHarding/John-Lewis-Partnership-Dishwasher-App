@@ -22,16 +22,18 @@ struct NetworkingManager {
         urlRequestExecuter.executeURLRequest(urlRequest: urlRequest) {  (responseData: Data?, urlResponse: URLResponse?, error: Error?) in
             
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
-                completion(.error(.connectionFailure))
+                completion(.error(.unknown))
                 return
             }
             
-            switch httpResponse.statusCode {
-            case 200..<300:
-                completion(.success(responseData))
-            default:
-                completion(.error(.unsuccessfulResponse))
+            let rawStatusCode = httpResponse.statusCode
+            guard HTTPStatusCodeDomain.isSuccessful(rawStatusCode: rawStatusCode) else {
+                let statusCode = HTTPStatusCode(rawValue: rawStatusCode)
+                completion(.error(.unsuccessfulHTTPStatusCode(statusCode)))
+                return
             }
+            
+            completion(.success(responseData))
         }
     }
     

@@ -22,6 +22,7 @@
 		5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999691E34CAAB004565E1 /* URLRequestExecution.swift */; };
 		5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479996B1E34E0D8004565E1 /* HTTPRequest.swift */; };
 		547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999701E34E5D4004565E1 /* HTTPRequestTest.swift */; };
+		548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		547999691E34CAAB004565E1 /* URLRequestExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExecution.swift; sourceTree = "<group>"; };
 		5479996B1E34E0D8004565E1 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		547999701E34E5D4004565E1 /* HTTPRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTest.swift; sourceTree = "<group>"; };
+		548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingErrorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				547999701E34E5D4004565E1 /* HTTPRequestTest.swift */,
+				548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			files = (
 				547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */,
 				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
+				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
 				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +564,7 @@
 				547999371E33F9E9004565E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		547999381E33F9E9004565E1 /* Build configuration list for PBXNativeTarget "DishwasherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +573,7 @@
 				5479993A1E33F9E9004565E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
