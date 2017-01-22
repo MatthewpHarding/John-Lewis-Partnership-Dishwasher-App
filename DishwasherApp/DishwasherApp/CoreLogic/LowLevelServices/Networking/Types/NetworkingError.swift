@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum SerializationError: Error {
+    case serializationFailure
+    case deserializationFailure
+}
+
 enum NetworkConnectivityError: Error {
     case failedToConnectToHost
     case noConnection

@@ -11,8 +11,9 @@ import Foundation
 struct NetworkingManager {
  
     let urlRequestExecuter: URLRequestExecution
+    let jsonSerializer: JSONSerializer
     
-    func performHTTPURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?, completion: @escaping (Result<Data?, NetworkingError>) -> Void) {
+    func performHTTPURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?, completion: @escaping (Result<Any?, NetworkingError>) -> Void) {
         
         guard let urlRequest = buildURLRequest(url: url, method: method, headers: headers, body: body) else {
             completion(.error(.cannotProcessRequest))
@@ -39,7 +40,14 @@ struct NetworkingManager {
                 return
             }
             
-            completion(.success(responseData))
+            // inspect any recieved data
+            switch self.deserialize(responseData, serializer: self.jsonSerializer) {
+            case .success(let deserializedData):
+                completion(.success(deserializedData))
+                
+            case .error:
+                completion(.error(.jsonDeserializationFailure))
+            }
         }
     }
     
@@ -51,5 +59,19 @@ struct NetworkingManager {
         request.httpBody = body
         
         return request
+    }
+    
+    private func deserialize(_ responseData: Data?, serializer: JSONSerializer) -> Result<Any?, SerializationError> {
+        
+        guard let data = responseData else {
+            return .success(nil)
+        }
+        
+        do {
+            let jsonObject = try serializer.jsonObjectWithData(data: data)
+            return .success(jsonObject)
+        } catch {
+            return .error(.deserializationFailure)
+        }
     }
 }
