@@ -685,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C70F0099AB7C89FB67E62DEE /* Pods-DishwasherApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SMPWKXPHUW;
 				INFOPLIST_FILE = DishwasherApp/Info.plist;
@@ -699,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F442D83348B6AA42AEE74CA0 /* Pods-DishwasherApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SMPWKXPHUW;
 				INFOPLIST_FILE = DishwasherApp/Info.plist;
