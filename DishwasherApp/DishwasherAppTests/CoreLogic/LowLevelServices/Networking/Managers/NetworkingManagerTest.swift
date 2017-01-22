@@ -24,7 +24,8 @@ class NetworkingManagerTest: XCTestCase {
     }
     
     private func executeAndTestRequest(withStatusCode statusCode: Int, success: Bool) {
-        
+        let callbackExpectation = expectation(description: "Networking Manager executeRequest")
+
         executeRequest(responseBody: nil, statusCode: statusCode) { result in
         
             if case .success = result,
@@ -37,12 +38,20 @@ class NetworkingManagerTest: XCTestCase {
                 success == true {
                 XCTFail("Networking Manager returned an error when a successful result was expected")
             }
+            callbackExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.1) { error in
+            if let error = error {
+                XCTFail("Unit test timed out with error: \(error)")
+            }
         }
     }
     
     // MARK:- Response Data
     
     func testDeserializedResponse() {
+        let callbackExpectation = expectation(description: "Networking Manager executeRequest")
         
         let testResponse = ["key1": "element1", "key2": "element2", "key3": "element3"]
         executeRequest(responseBody: testResponse, statusCode: 200) { result in
@@ -57,6 +66,13 @@ class NetworkingManagerTest: XCTestCase {
                 
             case .error:
                 XCTFail("Networking Manager returned an error when a successful result was expected")
+            }
+            callbackExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.1) { error in
+            if let error = error {
+                XCTFail("Unit test timed out with error: \(error)")
             }
         }
     }

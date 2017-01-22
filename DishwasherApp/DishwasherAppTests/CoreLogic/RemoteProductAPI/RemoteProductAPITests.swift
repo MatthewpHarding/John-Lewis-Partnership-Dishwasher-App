@@ -14,6 +14,7 @@ class RemoteProductAPITests: XCTestCase {
     // MARK:- Networking Tests
     
     func testSuccessfulResponse() {
+        let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         let product = testableProduct()
         let searchResult = SearchResult(products: [product], results: 30)
@@ -30,10 +31,19 @@ class RemoteProductAPITests: XCTestCase {
             case .error:
                 XCTFail("Could not return search results from the Product API")
             }
+            
+            callbackExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.1) { error in
+            if let error = error {
+                XCTFail("Unit test timed out with error: \(error)")
+            }
         }
     }
 
     func testParsingError() {
+        let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         // Generate Testable Search Result
         let parserResponseResult: Result<SearchResult, ProductParserError> = .error(.deserializationFailure)
@@ -51,6 +61,14 @@ class RemoteProductAPITests: XCTestCase {
                     XCTFail("Remote Product API returned an incorrect error value")
                 }
             }
+            
+            callbackExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.1) { error in
+            if let error = error {
+                XCTFail("Unit test timed out with error: \(error)")
+            }
         }
     }
     
@@ -67,6 +85,7 @@ class RemoteProductAPITests: XCTestCase {
     }
     
     private func executeAndTestSuccessfulSearch(for term: String) {
+        let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         let product = testableProduct()
         let searchResult = SearchResult(products: [product], results: 30)
@@ -84,6 +103,14 @@ class RemoteProductAPITests: XCTestCase {
                 case .couldNotProccessRequest:
                     XCTFail("Could not process the search result term used for the Product API")
                 }
+            }
+            
+            callbackExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.1) { error in
+            if let error = error {
+                XCTFail("Unit test timed out with error: \(error)")
             }
         }
     }
