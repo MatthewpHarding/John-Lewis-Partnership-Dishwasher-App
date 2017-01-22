@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		39F3F454AC017C2B88447580 /* Pods_DishwasherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99612995AB09D16967452979 /* Pods_DishwasherApp.framework */; };
 		5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999191E33F9E9004565E1 /* AppDelegate.swift */; };
-		5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479991B1E33F9E9004565E1 /* MasterViewController.swift */; };
-		5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479991D1E33F9E9004565E1 /* DetailViewController.swift */; };
 		547999211E33F9E9004565E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5479991F1E33F9E9004565E1 /* Main.storyboard */; };
 		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
 		547999261E33F9E9004565E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547999241E33F9E9004565E1 /* LaunchScreen.storyboard */; };
@@ -44,6 +42,7 @@
 		548295701E3535C300F5EA9E /* URLRequestExecuterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482956F1E3535C300F5EA9E /* URLRequestExecuterMock.swift */; };
 		548295721E353A6A00F5EA9E /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295711E353A6A00F5EA9E /* NetworkingMock.swift */; };
 		548295741E353D1B00F5EA9E /* ProductParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295731E353D1B00F5EA9E /* ProductParserMock.swift */; };
+		5482957A1E355E8300F5EA9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295791E355E8300F5EA9E /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +58,6 @@
 /* Begin PBXFileReference section */
 		547999161E33F9E9004565E1 /* DishwasherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwasherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547999191E33F9E9004565E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5479991B1E33F9E9004565E1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		5479991D1E33F9E9004565E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		547999201E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		547999221E33F9E9004565E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547999251E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,6 +94,7 @@
 		5482956F1E3535C300F5EA9E /* URLRequestExecuterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExecuterMock.swift; sourceTree = "<group>"; };
 		548295711E353A6A00F5EA9E /* NetworkingMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
 		548295731E353D1B00F5EA9E /* ProductParserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParserMock.swift; sourceTree = "<group>"; };
+		548295791E355E8300F5EA9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		99612995AB09D16967452979 /* Pods_DishwasherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishwasherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70F0099AB7C89FB67E62DEE /* Pods-DishwasherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F442D83348B6AA42AEE74CA0 /* Pods-DishwasherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,10 +142,9 @@
 		547999181E33F9E9004565E1 /* DishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
+				548295771E355E8300F5EA9E /* Presentation */,
 				5479993F1E34BF58004565E1 /* Core Logic */,
 				547999191E33F9E9004565E1 /* AppDelegate.swift */,
-				5479991B1E33F9E9004565E1 /* MasterViewController.swift */,
-				5479991D1E33F9E9004565E1 /* DetailViewController.swift */,
 				5479991F1E33F9E9004565E1 /* Main.storyboard */,
 				547999221E33F9E9004565E1 /* Assets.xcassets */,
 				547999241E33F9E9004565E1 /* LaunchScreen.storyboard */,
@@ -372,6 +369,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		548295771E355E8300F5EA9E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				548295781E355E8300F5EA9E /* ViewControllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		548295781E355E8300F5EA9E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				548295791E355E8300F5EA9E /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		967E47302385CFAD235D27F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,15 +567,14 @@
 				548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */,
 				5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
-				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
 				548295611E35204B00F5EA9E /* Price.swift in Sources */,
 				5482955F1E35202000F5EA9E /* Price+Decodable.swift in Sources */,
-				5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */,
 				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
 				5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
 				548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */,
+				5482957A1E355E8300F5EA9E /* SearchViewController.swift in Sources */,
 				548295591E351BAA00F5EA9E /* Product+Decodable.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
@@ -721,6 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -736,6 +749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilesandpit.DishwasherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
