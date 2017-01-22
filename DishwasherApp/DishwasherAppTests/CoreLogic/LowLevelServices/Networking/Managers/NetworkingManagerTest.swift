@@ -11,12 +11,22 @@ import XCTest
 
 class NetworkingManagerTest: XCTestCase {
     
-    func testSuccessfulResult() {
+    func testSuccessfulResults() {
+        executeRequest(withStatusCode: 100, success: false)
+        executeRequest(withStatusCode: 199, success: false)
+        executeRequest(withStatusCode: 200, success: true)
+        executeRequest(withStatusCode: 299, success: true)
+        executeRequest(withStatusCode: 300, success: false)
+        executeRequest(withStatusCode: 400, success: false)
+        executeRequest(withStatusCode: 500, success: false)
+    }
+    
+    func executeRequest(withStatusCode statusCode: Int, success: Bool) {
         
         // force our response to a be a success
         let response: (Void) -> (Data?, URLResponse?, Error?) = {
             let url = URL(string:"https://api.johnlewis.com")!
-            let httpURLResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+            let httpURLResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: nil)
             return (nil, httpURLResponse, nil)
         }
         
@@ -32,11 +42,15 @@ class NetworkingManagerTest: XCTestCase {
         // ensure the networking manager returns a success
         networkingManager.performHTTPURLRequest(url: url, method: "GET", headers: nil, body: nil) { result in
         
-            switch result {
-            case .success: break
-                
-            case .error:
-                XCTFail("Networking Manager returned an incorrect result")
+            if case .success = result,
+                success == false {
+                XCTFail("Networking Manager returned a successful result when an unsuccessful result was expected")
+                return
+            }
+            
+            if case .error = result,
+                success == true {
+                XCTFail("Networking Manager returned an error when a successful result was expected")
             }
         }
     }
