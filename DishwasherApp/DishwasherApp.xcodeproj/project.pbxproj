@@ -23,6 +23,9 @@
 		5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479996B1E34E0D8004565E1 /* HTTPRequest.swift */; };
 		547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999701E34E5D4004565E1 /* HTTPRequestTest.swift */; };
 		548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */; };
+		548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295361E34F34400F5EA9E /* JSONSerializer.swift */; };
+		548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */; };
+		5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		5479996B1E34E0D8004565E1 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		547999701E34E5D4004565E1 /* HTTPRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTest.swift; sourceTree = "<group>"; };
 		548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingErrorTests.swift; sourceTree = "<group>"; };
+		548295361E34F34400F5EA9E /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManager.swift; sourceTree = "<group>"; };
+		5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			children = (
 				547999431E34BF58004565E1 /* NetworkingManager.swift */,
 				5479995F1E34C104004565E1 /* URLRequestManager.swift */,
+				548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */,
+				5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				547999691E34CAAB004565E1 /* URLRequestExecution.swift */,
+				548295361E34F34400F5EA9E /* JSONSerializer.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -346,10 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5479995C1E34C09F004565E1 /* Result.swift in Sources */,
+				548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */,
 				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
 				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
 				5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */,
+				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
@@ -365,6 +376,7 @@
 				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
 				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
 				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
+				5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
