@@ -33,3 +33,24 @@ class SearchViewController: UIViewController {
     */
 
 }
+
+// MARK:- UICollectionView DataSource
+
+extension SearchViewController: UICollectionViewDataSource {
+    
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.titleLabel.text = "Test"
+        cell.subtitleLabel.text = "subtest"
+        
+        return cell
+    }
+}
