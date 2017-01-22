@@ -26,6 +26,9 @@
 		548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295361E34F34400F5EA9E /* JSONSerializer.swift */; };
 		548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */; };
 		5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */; };
+		548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */; };
+		548295451E35066100F5EA9E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295441E35066100F5EA9E /* Product.swift */; };
+		548295471E3507CB00F5EA9E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295461E3507CB00F5EA9E /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		548295361E34F34400F5EA9E /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		548295381E34F83C00F5EA9E /* JSONSerializationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManager.swift; sourceTree = "<group>"; };
 		5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializationManagerTests.swift; sourceTree = "<group>"; };
+		5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProductAPI.swift; sourceTree = "<group>"; };
+		548295441E35066100F5EA9E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		548295461E3507CB00F5EA9E /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 		5479993F1E34BF58004565E1 /* Core Logic */ = {
 			isa = PBXGroup;
 			children = (
+				5482953E1E35063300F5EA9E /* Remote Product API */,
 				547999511E34C09F004565E1 /* Global Utilities */,
 				547999401E34BF58004565E1 /* Low Level Services */,
 			);
@@ -236,6 +243,7 @@
 			children = (
 				547999691E34CAAB004565E1 /* URLRequestExecution.swift */,
 				548295361E34F34400F5EA9E /* JSONSerializer.swift */,
+				548295461E3507CB00F5EA9E /* Networking.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -247,6 +255,24 @@
 				548295341E34EB3200F5EA9E /* NetworkingErrorTests.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		5482953E1E35063300F5EA9E /* Remote Product API */ = {
+			isa = PBXGroup;
+			children = (
+				5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */,
+				548295431E35066100F5EA9E /* Models */,
+			);
+			name = "Remote Product API";
+			path = RemoteProductAPI;
+			sourceTree = "<group>";
+		};
+		548295431E35066100F5EA9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				548295441E35066100F5EA9E /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +389,11 @@
 				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
+				548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
+				548295451E35066100F5EA9E /* Product.swift in Sources */,
+				548295471E3507CB00F5EA9E /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

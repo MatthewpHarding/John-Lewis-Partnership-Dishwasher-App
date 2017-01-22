@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct NetworkingManager {
+struct NetworkingManager: Networking {
  
     let urlRequestExecuter: URLRequestExecution
     let jsonSerializer: JSONSerializer
     
-    func performHTTPURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?, completion: @escaping (Result<Any?, NetworkingError>) -> Void) {
+    func performHTTPURLRequest(url: URL, method: HTTPRequest.HTTPMethod, headers: [String: String]?, body: Data?, completion: @escaping (Result<Any?, NetworkingError>) -> Void) {
         
         guard let urlRequest = buildURLRequest(url: url, method: method, headers: headers, body: body) else {
             completion(.error(.cannotProcessRequest))
@@ -51,10 +51,10 @@ struct NetworkingManager {
         }
     }
     
-    private func buildURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?) -> URLRequest? {
+    private func buildURLRequest(url: URL, method: HTTPRequest.HTTPMethod, headers: [String: String]?, body: Data?) -> URLRequest? {
         
         var request = URLRequest(url: url, timeoutInterval: 30)
-        request.httpMethod = method
+        request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         request.httpBody = body
         
