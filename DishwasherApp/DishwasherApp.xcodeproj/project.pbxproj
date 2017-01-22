@@ -39,6 +39,11 @@
 		548295631E35214600F5EA9E /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295621E35214600F5EA9E /* URL+Decodable.swift */; };
 		548295651E3523F700F5EA9E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295641E3523F700F5EA9E /* SearchResult.swift */; };
 		548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295661E35244700F5EA9E /* SearchResult+Decodable.swift */; };
+		5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482956B1E352C4200F5EA9E /* ProductParser.swift */; };
+		5482956E1E35335D00F5EA9E /* RemoteProductAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482956D1E35335D00F5EA9E /* RemoteProductAPITests.swift */; };
+		548295701E3535C300F5EA9E /* URLRequestExecuterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482956F1E3535C300F5EA9E /* URLRequestExecuterMock.swift */; };
+		548295721E353A6A00F5EA9E /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295711E353A6A00F5EA9E /* NetworkingMock.swift */; };
+		548295741E353D1B00F5EA9E /* ProductParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295731E353D1B00F5EA9E /* ProductParserMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,11 @@
 		548295621E35214600F5EA9E /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
 		548295641E3523F700F5EA9E /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		548295661E35244700F5EA9E /* SearchResult+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchResult+Decodable.swift"; sourceTree = "<group>"; };
+		5482956B1E352C4200F5EA9E /* ProductParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParser.swift; sourceTree = "<group>"; };
+		5482956D1E35335D00F5EA9E /* RemoteProductAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProductAPITests.swift; sourceTree = "<group>"; };
+		5482956F1E3535C300F5EA9E /* URLRequestExecuterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExecuterMock.swift; sourceTree = "<group>"; };
+		548295711E353A6A00F5EA9E /* NetworkingMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
+		548295731E353D1B00F5EA9E /* ProductParserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParserMock.swift; sourceTree = "<group>"; };
 		99612995AB09D16967452979 /* Pods_DishwasherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishwasherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70F0099AB7C89FB67E62DEE /* Pods-DishwasherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F442D83348B6AA42AEE74CA0 /* Pods-DishwasherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */,
+				548295711E353A6A00F5EA9E /* NetworkingMock.swift */,
+				5482956F1E3535C300F5EA9E /* URLRequestExecuterMock.swift */,
 				5482953A1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift */,
 			);
 			path = Managers;
@@ -307,6 +319,7 @@
 		5482954F1E351B6600F5EA9E /* RemoteProductAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5482956D1E35335D00F5EA9E /* RemoteProductAPITests.swift */,
 				548295501E351B6600F5EA9E /* Parsing */,
 			);
 			path = RemoteProductAPI;
@@ -316,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				548295511E351B6600F5EA9E /* RemoteProductAPIParserTests.swift */,
+				548295731E353D1B00F5EA9E /* ProductParserMock.swift */,
 				5482955B1E351C1900F5EA9E /* TestJSON */,
 			);
 			path = Parsing;
@@ -325,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				548295581E351BAA00F5EA9E /* RemoteProductAPIParser.swift */,
+				5482956A1E352C4200F5EA9E /* Protocols */,
 				548295561E351BAA00F5EA9E /* Decodable */,
 			);
 			path = Parsing;
@@ -347,6 +362,14 @@
 				5482955C1E351C1900F5EA9E /* SearchResult-Dishwasher.json */,
 			);
 			path = TestJSON;
+			sourceTree = "<group>";
+		};
+		5482956A1E352C4200F5EA9E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5482956B1E352C4200F5EA9E /* ProductParser.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		967E47302385CFAD235D27F3 /* Frameworks */ = {
@@ -529,6 +552,7 @@
 				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
 				548295631E35214600F5EA9E /* URL+Decodable.swift in Sources */,
 				548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */,
+				5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
 				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
 				548295611E35204B00F5EA9E /* Price.swift in Sources */,
@@ -551,9 +575,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				548295741E353D1B00F5EA9E /* ProductParserMock.swift in Sources */,
+				5482956E1E35335D00F5EA9E /* RemoteProductAPITests.swift in Sources */,
 				547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */,
+				548295701E3535C300F5EA9E /* URLRequestExecuterMock.swift in Sources */,
 				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
 				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
+				548295721E353A6A00F5EA9E /* NetworkingMock.swift in Sources */,
 				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
 				548295521E351B6600F5EA9E /* RemoteProductAPIParserTests.swift in Sources */,
 				5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */,

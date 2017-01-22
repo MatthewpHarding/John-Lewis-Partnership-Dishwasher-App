@@ -92,24 +92,10 @@ class NetworkingManagerTest: XCTestCase {
             return (data, httpURLResponse, nil)
         }
         
-        let urlRequestExecution = URLRequestExecuter(response: response)
+        let urlRequestExecution = URLRequestExecuterMock(response: response)
         let serializer = JSONSerializationManager()
         let networkingManager = NetworkingManager(urlRequestExecuter: urlRequestExecution, jsonSerializer: serializer)
         
         networkingManager.performHTTPURLRequest(url: url, method: .get, headers: nil, body: nil, completion : completion)
     }
-}
-
-struct URLRequestExecuter: URLRequestExecution {
-    
-    let response: (Void) -> (Data?, URLResponse?, Error?)
-    
-    func executeURLRequest(urlRequest: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let generatedResponse = response()
-        let data = generatedResponse.0
-        let urlResponse = generatedResponse.1
-        let error = generatedResponse.2
-        completion(data, urlResponse, error)
-    }
-    
 }

@@ -9,15 +9,15 @@
 import Foundation
 import Argo
 
-enum RemoteProductAPIParserError: Error {
-    case deserializationFailure
-}
-
-struct RemoteProductAPIParser {
+struct RemoteProductAPIParser: ProductParser {
     
-    func parseSearchResult(from jsonObject: Any) -> Result<SearchResult, RemoteProductAPIParserError> {
+    func parseSearchResult(from jsonObject: Any?) -> Result<SearchResult, ProductParserError> {
         
-        let decodedResult: Decoded<SearchResult> = decode(jsonObject)
+        guard let json = jsonObject else {
+            return .error(.deserializationFailure)
+        }
+        
+        let decodedResult: Decoded<SearchResult> = decode(json)
         
         switch decodedResult {
         case .success(let decodedValue):
