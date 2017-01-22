@@ -14,6 +14,10 @@
 		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
 		547999261E33F9E9004565E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547999241E33F9E9004565E1 /* LaunchScreen.storyboard */; };
 		547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999301E33F9E9004565E1 /* DishwasherAppTests.swift */; };
+		547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999431E34BF58004565E1 /* NetworkingManager.swift */; };
+		547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */; };
+		5479995C1E34C09F004565E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999571E34C09F004565E1 /* Result.swift */; };
+		547999601E34C104004565E1 /* URLRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479995F1E34C104004565E1 /* URLRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		5479992C1E33F9E9004565E1 /* DishwasherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwasherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547999301E33F9E9004565E1 /* DishwasherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherAppTests.swift; sourceTree = "<group>"; };
 		547999321E33F9E9004565E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547999431E34BF58004565E1 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTest.swift; sourceTree = "<group>"; };
+		547999571E34C09F004565E1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5479995F1E34C104004565E1 /* URLRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		547999181E33F9E9004565E1 /* DishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
+				5479993F1E34BF58004565E1 /* Core Logic */,
 				547999191E33F9E9004565E1 /* AppDelegate.swift */,
 				5479991B1E33F9E9004565E1 /* MasterViewController.swift */,
 				5479991D1E33F9E9004565E1 /* DetailViewController.swift */,
@@ -93,10 +102,103 @@
 		5479992F1E33F9E9004565E1 /* DishwasherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5479994B1E34BF90004565E1 /* CoreLogic */,
 				547999301E33F9E9004565E1 /* DishwasherAppTests.swift */,
 				547999321E33F9E9004565E1 /* Info.plist */,
 			);
 			path = DishwasherAppTests;
+			sourceTree = "<group>";
+		};
+		5479993F1E34BF58004565E1 /* Core Logic */ = {
+			isa = PBXGroup;
+			children = (
+				547999511E34C09F004565E1 /* Global Utilities */,
+				547999401E34BF58004565E1 /* Low Level Services */,
+			);
+			name = "Core Logic";
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		547999401E34BF58004565E1 /* Low Level Services */ = {
+			isa = PBXGroup;
+			children = (
+				547999411E34BF58004565E1 /* Networking */,
+			);
+			name = "Low Level Services";
+			path = LowLevelServices;
+			sourceTree = "<group>";
+		};
+		547999411E34BF58004565E1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				547999421E34BF58004565E1 /* Managers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		547999421E34BF58004565E1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				547999431E34BF58004565E1 /* NetworkingManager.swift */,
+				5479995F1E34C104004565E1 /* URLRequestManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5479994B1E34BF90004565E1 /* CoreLogic */ = {
+			isa = PBXGroup;
+			children = (
+				5479994C1E34BF90004565E1 /* LowLevelServices */,
+			);
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		5479994C1E34BF90004565E1 /* LowLevelServices */ = {
+			isa = PBXGroup;
+			children = (
+				5479994D1E34BF90004565E1 /* Networking */,
+			);
+			path = LowLevelServices;
+			sourceTree = "<group>";
+		};
+		5479994D1E34BF90004565E1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5479994E1E34BF90004565E1 /* Managers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5479994E1E34BF90004565E1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5479994F1E34BF90004565E1 /* NetworkingManagerTest.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		547999511E34C09F004565E1 /* Global Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				547999551E34C09F004565E1 /* Swift Foundation Enhancements */,
+			);
+			path = "Global Utilities";
+			sourceTree = "<group>";
+		};
+		547999551E34C09F004565E1 /* Swift Foundation Enhancements */ = {
+			isa = PBXGroup;
+			children = (
+				547999561E34C09F004565E1 /* Compounds */,
+			);
+			path = "Swift Foundation Enhancements";
+			sourceTree = "<group>";
+		};
+		547999561E34C09F004565E1 /* Compounds */ = {
+			isa = PBXGroup;
+			children = (
+				547999571E34C09F004565E1 /* Result.swift */,
+			);
+			path = Compounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5479995C1E34C09F004565E1 /* Result.swift in Sources */,
+				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
 				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
 				5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */,
+				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547999501E34BF90004565E1 /* NetworkingManagerTest.swift in Sources */,
 				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
