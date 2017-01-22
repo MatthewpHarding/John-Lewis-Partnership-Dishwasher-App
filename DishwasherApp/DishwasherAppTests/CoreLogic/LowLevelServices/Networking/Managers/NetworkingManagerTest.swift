@@ -96,7 +96,7 @@ class NetworkingManagerTest: XCTestCase {
         let serializer = JSONSerializationManager()
         let networkingManager = NetworkingManager(urlRequestExecuter: urlRequestExecution, jsonSerializer: serializer)
         
-        networkingManager.performHTTPURLRequest(url: url, method: "GET", headers: nil, body: nil, completion : completion)
+        networkingManager.performHTTPURLRequest(url: url, method: .get, headers: nil, body: nil, completion : completion)
     }
 }
 
