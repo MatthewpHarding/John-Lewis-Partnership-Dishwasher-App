@@ -30,6 +30,15 @@
 		548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */; };
 		548295451E35066100F5EA9E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295441E35066100F5EA9E /* Product.swift */; };
 		548295471E3507CB00F5EA9E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295461E3507CB00F5EA9E /* Networking.swift */; };
+		548295521E351B6600F5EA9E /* RemoteProductAPIParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295511E351B6600F5EA9E /* RemoteProductAPIParserTests.swift */; };
+		548295591E351BAA00F5EA9E /* Product+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295571E351BAA00F5EA9E /* Product+Decodable.swift */; };
+		5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295581E351BAA00F5EA9E /* RemoteProductAPIParser.swift */; };
+		5482955D1E351C1900F5EA9E /* SearchResult-Dishwasher.json in Resources */ = {isa = PBXBuildFile; fileRef = 5482955C1E351C1900F5EA9E /* SearchResult-Dishwasher.json */; };
+		5482955F1E35202000F5EA9E /* Price+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5482955E1E35202000F5EA9E /* Price+Decodable.swift */; };
+		548295611E35204B00F5EA9E /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295601E35204B00F5EA9E /* Price.swift */; };
+		548295631E35214600F5EA9E /* URL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295621E35214600F5EA9E /* URL+Decodable.swift */; };
+		548295651E3523F700F5EA9E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295641E3523F700F5EA9E /* SearchResult.swift */; };
+		548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548295661E35244700F5EA9E /* SearchResult+Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +78,15 @@
 		5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProductAPI.swift; sourceTree = "<group>"; };
 		548295441E35066100F5EA9E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		548295461E3507CB00F5EA9E /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		548295511E351B6600F5EA9E /* RemoteProductAPIParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProductAPIParserTests.swift; sourceTree = "<group>"; };
+		548295571E351BAA00F5EA9E /* Product+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+Decodable.swift"; sourceTree = "<group>"; };
+		548295581E351BAA00F5EA9E /* RemoteProductAPIParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProductAPIParser.swift; sourceTree = "<group>"; };
+		5482955C1E351C1900F5EA9E /* SearchResult-Dishwasher.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SearchResult-Dishwasher.json"; sourceTree = "<group>"; };
+		5482955E1E35202000F5EA9E /* Price+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+Decodable.swift"; sourceTree = "<group>"; };
+		548295601E35204B00F5EA9E /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		548295621E35214600F5EA9E /* URL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Decodable.swift"; sourceTree = "<group>"; };
+		548295641E3523F700F5EA9E /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		548295661E35244700F5EA9E /* SearchResult+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchResult+Decodable.swift"; sourceTree = "<group>"; };
 		99612995AB09D16967452979 /* Pods_DishwasherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishwasherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70F0099AB7C89FB67E62DEE /* Pods-DishwasherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F442D83348B6AA42AEE74CA0 /* Pods-DishwasherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishwasherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DishwasherApp/Pods-DishwasherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +199,7 @@
 		5479994B1E34BF90004565E1 /* CoreLogic */ = {
 			isa = PBXGroup;
 			children = (
+				5482954F1E351B6600F5EA9E /* RemoteProductAPI */,
 				5479994C1E34BF90004565E1 /* LowLevelServices */,
 			);
 			path = CoreLogic;
@@ -268,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				5482953F1E35063300F5EA9E /* RemoteProductAPI.swift */,
+				548295551E351BAA00F5EA9E /* Parsing */,
 				548295431E35066100F5EA9E /* Models */,
 			);
 			name = "Remote Product API";
@@ -278,8 +298,55 @@
 			isa = PBXGroup;
 			children = (
 				548295441E35066100F5EA9E /* Product.swift */,
+				548295641E3523F700F5EA9E /* SearchResult.swift */,
+				548295601E35204B00F5EA9E /* Price.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5482954F1E351B6600F5EA9E /* RemoteProductAPI */ = {
+			isa = PBXGroup;
+			children = (
+				548295501E351B6600F5EA9E /* Parsing */,
+			);
+			path = RemoteProductAPI;
+			sourceTree = "<group>";
+		};
+		548295501E351B6600F5EA9E /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				548295511E351B6600F5EA9E /* RemoteProductAPIParserTests.swift */,
+				5482955B1E351C1900F5EA9E /* TestJSON */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		548295551E351BAA00F5EA9E /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				548295581E351BAA00F5EA9E /* RemoteProductAPIParser.swift */,
+				548295561E351BAA00F5EA9E /* Decodable */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		548295561E351BAA00F5EA9E /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				548295621E35214600F5EA9E /* URL+Decodable.swift */,
+				548295571E351BAA00F5EA9E /* Product+Decodable.swift */,
+				5482955E1E35202000F5EA9E /* Price+Decodable.swift */,
+				548295661E35244700F5EA9E /* SearchResult+Decodable.swift */,
+			);
+			path = Decodable;
+			sourceTree = "<group>";
+		};
+		5482955B1E351C1900F5EA9E /* TestJSON */ = {
+			isa = PBXGroup;
+			children = (
+				5482955C1E351C1900F5EA9E /* SearchResult-Dishwasher.json */,
+			);
+			path = TestJSON;
 			sourceTree = "<group>";
 		};
 		967E47302385CFAD235D27F3 /* Frameworks */ = {
@@ -397,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5482955D1E351C1900F5EA9E /* SearchResult-Dishwasher.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,14 +525,21 @@
 			files = (
 				5479995C1E34C09F004565E1 /* Result.swift in Sources */,
 				548295391E34F83C00F5EA9E /* JSONSerializationManager.swift in Sources */,
+				548295651E3523F700F5EA9E /* SearchResult.swift in Sources */,
 				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
+				548295631E35214600F5EA9E /* URL+Decodable.swift in Sources */,
+				548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
 				5479991E1E33F9E9004565E1 /* DetailViewController.swift in Sources */,
+				548295611E35204B00F5EA9E /* Price.swift in Sources */,
+				5482955F1E35202000F5EA9E /* Price+Decodable.swift in Sources */,
 				5479991C1E33F9E9004565E1 /* MasterViewController.swift in Sources */,
 				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
+				5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
 				548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */,
+				548295591E351BAA00F5EA9E /* Product+Decodable.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
 				548295451E35066100F5EA9E /* Product.swift in Sources */,
@@ -480,6 +555,7 @@
 				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
 				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
 				547999311E33F9E9004565E1 /* DishwasherAppTests.swift in Sources */,
+				548295521E351B6600F5EA9E /* RemoteProductAPIParserTests.swift in Sources */,
 				5482953B1E34F87A00F5EA9E /* JSONSerializationManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

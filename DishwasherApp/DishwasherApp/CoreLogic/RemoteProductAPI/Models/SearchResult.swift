@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  SearchResult.swift
 //  DishwasherApp
 //
 //  Created by Matt Harding on 22/01/2017.
@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct Product {
-    let identifier: String
-    let title: String
-    let price: Price
-    let imageUrl: URL
+struct SearchResult {
+    let products: [Product]
+    let results: Int
 }
