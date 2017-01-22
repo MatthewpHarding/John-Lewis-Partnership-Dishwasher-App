@@ -10,4 +10,38 @@ import Foundation
 
 struct NetworkingManager {
  
+    let urlRequestExecuter: URLRequestExecution
+    
+    func performHTTPURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?, completion: @escaping (Result<Data?, NetworkingError>) -> Void) {
+        
+        guard let urlRequest = buildURLRequest(url: url, method: method, headers: headers, body: body) else {
+            completion(.error(.cannotProcessRequest))
+            return
+        }
+        
+        urlRequestExecuter.executeURLRequest(urlRequest: urlRequest) {  (responseData: Data?, urlResponse: URLResponse?, error: Error?) in
+            
+            guard let httpResponse = urlResponse as? HTTPURLResponse else {
+                completion(.error(.connectionFailure))
+                return
+            }
+            
+            switch httpResponse.statusCode {
+            case 200..<300:
+                completion(.success(responseData))
+            default:
+                completion(.error(.unsuccessfulResponse))
+            }
+        }
+    }
+    
+    private func buildURLRequest(url: URL, method: String, headers: [String: String]?, body: Data?) -> URLRequest? {
+        
+        var request = URLRequest(url: url, timeoutInterval: 30)
+        request.httpMethod = method
+        request.allHTTPHeaderFields = headers
+        request.httpBody = body
+        
+        return request
+    }
 }
