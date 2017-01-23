@@ -85,7 +85,7 @@ extension SearchViewController {
                     self?.searchResult = searchResult
                     self?.reloadData()
                     
-                case .error(let error): break
+                case .error: break
                     // TODO display a retry screen
                 }
             }
