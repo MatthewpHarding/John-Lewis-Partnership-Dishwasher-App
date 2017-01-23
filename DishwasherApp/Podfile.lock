@@ -2,17 +2,23 @@ PODS:
   - Argo (4.1.1):
     - Runes (>= 4.0.0)
   - Curry (3.0.0)
+  - Kingfisher (3.3.1)
+  - KingfisherExtension (1.0.1):
+    - Kingfisher
   - Runes (4.0.1)
 
 DEPENDENCIES:
   - Argo
   - Curry
+  - KingfisherExtension (~> 1.0.1)
 
 SPEC CHECKSUMS:
   Argo: 014ac072f97462bc1a9b83d302edb351488a532f
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
+  Kingfisher: 4d943445768c60fe5de314619a8ab07ec761ae5b
+  KingfisherExtension: bfb21c0cd08c62fd0c92e5d10c7d098b597fc45b
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
 
-PODFILE CHECKSUM: d383ea3ea9de4af93dc93e8084ab5ddb3d85a51f
+PODFILE CHECKSUM: 90f18133f36ce20d70e30b3230ae34637733913d
 
 COCOAPODS: 1.1.1
