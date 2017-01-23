@@ -66,6 +66,8 @@ extension SearchViewController: UICollectionViewDataSource {
         cell.titleLabel.text = product.title
         cell.subtitleLabel.text = product.price.now
         
+        cell.imageUrl = product.imageUrl
+        
         return cell
     }
 }

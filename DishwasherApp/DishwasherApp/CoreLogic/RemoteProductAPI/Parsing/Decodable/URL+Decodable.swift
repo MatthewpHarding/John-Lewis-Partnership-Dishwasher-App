@@ -13,8 +13,8 @@ extension URL: Decodable {
     
     public static func decode(_ json: JSON) -> Decoded<URL> {
         switch(json) {
-        case let .string(s):
-            return .fromOptional(URL(string: s))
+        case let .string(path):
+            return .fromOptional(URL(string: path, relativeTo: URL(string: "https://")))
         default:
             return .typeMismatch(expected: "URL", actual: "\(json)")
         }
