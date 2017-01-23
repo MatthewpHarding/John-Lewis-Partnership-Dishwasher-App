@@ -10,6 +10,9 @@
 		39F3F454AC017C2B88447580 /* Pods_DishwasherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99612995AB09D16967452979 /* Pods_DishwasherApp.framework */; };
 		546B70311E356AB10005DF3B /* FeatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70301E356AB10005DF3B /* FeatureFactory.swift */; };
 		546B703A1E3570290005DF3B /* CollectionType+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70381E3570290005DF3B /* CollectionType+SafeIndex.swift */; };
+		546B70621E369A310005DF3B /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70611E369A310005DF3B /* ProductDetail.swift */; };
+		546B70641E369BF30005DF3B /* ProductDetail-Dishwasher.json in Resources */ = {isa = PBXBuildFile; fileRef = 546B70631E369BF30005DF3B /* ProductDetail-Dishwasher.json */; };
+		546B70661E369E3F0005DF3B /* ProductDetail+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70651E369E3F0005DF3B /* ProductDetail+Decodable.swift */; };
 		5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999191E33F9E9004565E1 /* AppDelegate.swift */; };
 		547999211E33F9E9004565E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5479991F1E33F9E9004565E1 /* Main.storyboard */; };
 		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		546B70301E356AB10005DF3B /* FeatureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureFactory.swift; sourceTree = "<group>"; };
 		546B70381E3570290005DF3B /* CollectionType+SafeIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+SafeIndex.swift"; sourceTree = "<group>"; };
+		546B70611E369A310005DF3B /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		546B70631E369BF30005DF3B /* ProductDetail-Dishwasher.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ProductDetail-Dishwasher.json"; sourceTree = "<group>"; };
+		546B70651E369E3F0005DF3B /* ProductDetail+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductDetail+Decodable.swift"; sourceTree = "<group>"; };
 		547999161E33F9E9004565E1 /* DishwasherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwasherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547999191E33F9E9004565E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547999201E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				548295441E35066100F5EA9E /* Product.swift */,
+				546B70611E369A310005DF3B /* ProductDetail.swift */,
 				548295641E3523F700F5EA9E /* SearchResult.swift */,
 				548295601E35204B00F5EA9E /* Price.swift */,
 			);
@@ -371,6 +378,7 @@
 			children = (
 				548295621E35214600F5EA9E /* URL+Decodable.swift */,
 				548295571E351BAA00F5EA9E /* Product+Decodable.swift */,
+				546B70651E369E3F0005DF3B /* ProductDetail+Decodable.swift */,
 				5482955E1E35202000F5EA9E /* Price+Decodable.swift */,
 				548295661E35244700F5EA9E /* SearchResult+Decodable.swift */,
 			);
@@ -380,6 +388,7 @@
 		5482955B1E351C1900F5EA9E /* TestJSON */ = {
 			isa = PBXGroup;
 			children = (
+				546B70631E369BF30005DF3B /* ProductDetail-Dishwasher.json */,
 				5482955C1E351C1900F5EA9E /* SearchResult-Dishwasher.json */,
 			);
 			path = TestJSON;
@@ -533,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546B70641E369BF30005DF3B /* ProductDetail-Dishwasher.json in Resources */,
 				5482955D1E351C1900F5EA9E /* SearchResult-Dishwasher.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +608,7 @@
 				548295651E3523F700F5EA9E /* SearchResult.swift in Sources */,
 				547999601E34C104004565E1 /* URLRequestManager.swift in Sources */,
 				548295631E35214600F5EA9E /* URL+Decodable.swift in Sources */,
+				546B70621E369A310005DF3B /* ProductDetail.swift in Sources */,
 				548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */,
 				5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
@@ -609,6 +620,7 @@
 				5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
 				548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */,
+				546B70661E369E3F0005DF3B /* ProductDetail+Decodable.swift in Sources */,
 				5482957A1E355E8300F5EA9E /* SearchViewController.swift in Sources */,
 				548295591E351BAA00F5EA9E /* Product+Decodable.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,

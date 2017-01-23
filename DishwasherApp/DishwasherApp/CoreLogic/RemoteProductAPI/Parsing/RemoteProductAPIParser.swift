@@ -28,4 +28,20 @@ struct RemoteProductAPIParser: ProductParser {
         }
     }
     
+    func parseProductDetail(from jsonObject: Any?) -> Result<ProductDetail, ProductParserError> {
+        
+        guard let json = jsonObject else {
+            return .error(.deserializationFailure)
+        }
+        
+        let decodedResult: Decoded<ProductDetail> = decode(json)
+        
+        switch decodedResult {
+        case .success(let decodedValue):
+            return .success(decodedValue)
+            
+        case .failure:
+            return .error(.deserializationFailure)
+        }
+    }
 }

@@ -121,7 +121,9 @@ class RemoteProductAPITests: XCTestCase {
         
         let networking = NetworkingMock(responseResult: networkingResult)
        
-        let productParser = ProductParserMock(responseResult: parserResult)
+        var productParser = ProductParserMock()
+        productParser.searchResult = parserResult
+        
         let apiKey = "testKey"
         let remoteProductAPI = RemoteProductAPI(productParser: productParser, networking: networking, apiKey: apiKey)
         

@@ -11,9 +11,20 @@ import Foundation
 
 struct ProductParserMock: ProductParser {
     
-    let responseResult: Result<SearchResult, ProductParserError>
+    var searchResult: Result<SearchResult, ProductParserError>? = nil
+    var productDetailResult: Result<ProductDetail, ProductParserError>? = nil
     
     func parseSearchResult(from jsonObject: Any?) -> Result<SearchResult, ProductParserError>{
-        return responseResult
+        guard let searchResult = self.searchResult else {
+            return .error(.deserializationFailure)
+        }
+        return searchResult
+    }
+    
+    func parseProductDetail(from jsonObject: Any?) -> Result<ProductDetail, ProductParserError> {
+        guard let productDetailResult = self.productDetailResult else {
+            return .error(.deserializationFailure)
+        }
+        return productDetailResult
     }
 }
