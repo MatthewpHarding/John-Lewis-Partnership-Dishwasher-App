@@ -34,13 +34,51 @@ class RemoteProductAPIParserTests: XCTestCase  {
         
         XCTAssertEqual(product.identifier, "1913470")
         XCTAssertEqual(product.title, "Bosch SMV53M40GB Fully Integrated Dishwasher")
-        XCTAssertEqual(product.imageUrl.absoluteString, "//johnlewis.scene7.com/is/image/JohnLewis/234326372?")
+        XCTAssertEqual(product.imageUrl.absoluteString, "https://johnlewis.scene7.com/is/image/JohnLewis/234326372?")
         
         let price = product.price
         XCTAssertEqual(price.now, "449.00")
         XCTAssertEqual(price.currency, "GBP")
+    }
+
+    func testProductDetail() {
+        guard let jsonObject = generateJsonObject(filename: "ProductDetail-Dishwasher") else {
+            XCTFail("Could not deserialize the data from the json file")
+            return
+        }
         
+        let parser = RemoteProductAPIParser()
+        let parsingResult = parser.parseProductDetail(from: jsonObject)
         
+        guard case .success(let productDetail) = parsingResult else {
+            XCTFail("Parsing failed")
+            return
+        }
+        
+        XCTAssertEqual(productDetail.title, "Bosch SMV53M40GB Fully Integrated Dishwasher")
+        XCTAssertEqual(productDetail.code, "88701205")
+        XCTAssertEqual(productDetail.information, "<p><strong>Please note:</strong> The door panel shown is for illustration purposes only and is not included. Your kitchen supplier will be able to supply a door panel for this appliance to match your kitchen units.</p>\r\n<p>This Bosch SMV53M40GB integrated dishwasher boasts an impressive <strong>A++</strong> energy rating for an economical and environmentally friendly home.</p>\r\n<p>A heat exchanger is used for hygienic and efficient drying, while salt and rinse aid indicators give you feedback. This economical machine makes dishwashing easy and convenient in any household.</p>\r\n<p><strong>EcoSilence Drive&trade;</strong><br />\r\nBecause this machine is super quiet, you can take full advantage of off-peak energy costs without being disturbed during the night by noisy dishwashing. A brushless motor provides a quieter, faster and more energy efficient performance</p>\r\n<p><strong>VarioSpeed Plus</strong><br />\r\nThis function cleans dishes up to three times faster, while providing the best possible cleaning and drying results.</p>\r\n<p><strong>AquaMix</strong><br />\r\nThis glass protection system ensures extra gentle handling for your delicate glasses, making sure they come out shiny and clean without getting broken.</p>")
+        XCTAssertEqual(productDetail.specialOffer, "Save £50 until 07.02.17 (saving applied)")
+        XCTAssertEqual(productDetail.imageURLs.count, 6)
+        XCTAssertEqual(productDetail.includedServices.count, 1)
+        XCTAssertEqual(productDetail.features.count, 1)
+        
+        guard let feature = productDetail.features.first else {
+            XCTFail("Could not retrieve feature in product details")
+            return
+        }
+        
+        XCTAssertEqual(feature.name, "")
+        XCTAssertEqual(feature.attributes.count, 27)
+        
+        guard let attribute = feature.attributes.first else {
+            XCTFail("Could not retrieve attribute in product details feature")
+            return
+        }
+        
+        XCTAssertEqual(attribute.identifier, "attr9834441113")
+        XCTAssertEqual(attribute.name, "Dimensions")
+        XCTAssertEqual(attribute.value, "H81.5 x W59.8 x D55cm")
     }
 
     // MARK:- Helper Methods

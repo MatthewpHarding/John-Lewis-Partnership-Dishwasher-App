@@ -49,5 +49,39 @@ struct RemoteProductAPI {
             }
         }
     }
+    
+    func getDetails(for productIdentifier: String, completion: @escaping (Result<ProductDetail, RemoteProductAPIError>) -> Void) {
+     
+        guard let baseURL = URL(string: "https://api.johnlewis.com/v1/products") else {
+            completion(.error(.couldNotProccessRequest))
+            return
+        }
+        
+        let baseURLWithProductId = baseURL.appendingPathComponent(productIdentifier)
+        let apiKeyQueryItem = URLQueryItem(name: "key", value: apiKey)
+        var urlComponents = URLComponents(url: baseURLWithProductId, resolvingAgainstBaseURL: false)
+        urlComponents?.queryItems = [apiKeyQueryItem]
+        
+        guard let url = urlComponents?.url else {
+            completion(.error(.couldNotProccessRequest))
+            return
+        }
+        
+        networking.performHTTPURLRequest(url: url, method: .get, headers: nil, body: nil) { result in
+            switch result {
+            case .success(let networkingResponse):
+                if case let .success (productDetail) = self.productParser.parseProductDetail(from: networkingResponse) {
+                    completion(.success(productDetail))
+                    return
+                }
+                
+                return completion(.error(.deserializationFailure))
+                
+            case .error(let networkingError):
+                completion(.error(.networkingError(networkingError)))
+            }
+        }
+        
+    }
 }
 
