@@ -85,6 +85,7 @@ extension SearchViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
 }
 
 // MARK:- Product Search API
