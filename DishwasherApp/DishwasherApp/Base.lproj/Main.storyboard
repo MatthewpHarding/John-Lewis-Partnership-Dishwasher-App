@@ -142,6 +142,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="WqG-zc-fgT"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="wIW-7x-fen" kind="embed" identifier="DetailContent" id="YXd-74-4M2"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,6 +201,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5f-yO-3TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2034" y="114"/>
+        </scene>
+        <!--Product Table View Controller-->
+        <scene sceneID="gfQ-c6-Dy5">
+            <objects>
+                <tableViewController id="wIW-7x-fen" customClass="ProductTableViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="93l-OL-sqW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="wIW-7x-fen" id="buU-qR-dvj"/>
+                            <outlet property="delegate" destination="wIW-7x-fen" id="9zq-q3-Cvj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0G-ls-NHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301" y="-630"/>
         </scene>
     </scenes>
 </document>
