@@ -181,7 +181,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="448" height="400"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
-                                <segue destination="TAG-n3-Ibm" kind="embed" id="MtA-8s-nhh"/>
+                                <segue destination="TAG-n3-Ibm" kind="embed" identifier="GalleryContent" id="MtA-8s-nhh"/>
                             </connections>
                         </containerView>
                         <connections>
