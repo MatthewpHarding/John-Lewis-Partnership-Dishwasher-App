@@ -91,7 +91,7 @@
                                             <outlet property="imageView" destination="0fY-ar-HG9" id="REC-OA-FEn"/>
                                             <outlet property="subtitleLabel" destination="J9G-Ul-63o" id="LAH-Lo-QIA"/>
                                             <outlet property="titleLabel" destination="FXZ-7q-DUM" id="iey-5g-QLW"/>
-                                            <segue destination="0vO-9A-l0k" kind="show" id="zCi-CQ-yDH"/>
+                                            <segue destination="0vO-9A-l0k" kind="show" identifier="ProductDetail" id="zCi-CQ-yDH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -131,8 +131,9 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUS-mu-0MC" userLabel="main Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="448" height="1024"/>
+                                <color key="backgroundColor" red="0.00016780518733494425" green="0.17208643713952387" blue="0.87283867385786795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="xGm-6e-5bg" kind="embed" id="YJz-IP-ZjW"/>
+                                    <segue destination="xGm-6e-5bg" kind="embed" identifier="MasterContent" id="rUr-oX-dLf"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-I2-DNC" userLabel="detail Container View">
@@ -141,9 +142,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="WqG-zc-fgT"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="xGm-6e-5bg" kind="embed" identifier="DetailContent" id="ljf-pT-9hs"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,28 +169,18 @@
         <scene sceneID="Zou-GA-q02">
             <objects>
                 <tableViewController id="xGm-6e-5bg" customClass="ProductTableViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c4Y-Og-cuj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" id="c4Y-Og-cuj">
+                        <rect key="frame" x="0.0" y="0.0" width="448" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="1" green="0.1533498482" blue="0.12749033260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="gCg-1k-GeW">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                            <rect key="frame" x="0.0" y="0.0" width="448" height="400"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
                                 <segue destination="TAG-n3-Ibm" kind="embed" id="MtA-8s-nhh"/>
                             </connections>
                         </containerView>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tkh-4o-4VH">
-                                <rect key="frame" x="0.0" y="428" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tkh-4o-4VH" id="pp7-Rn-1se">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xGm-6e-5bg" id="MWS-Fw-FwL"/>
                             <outlet property="delegate" destination="xGm-6e-5bg" id="H58-TE-8uZ"/>
@@ -201,7 +189,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oX-Ge-2GK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="114"/>
+            <point key="canvasLocation" x="1320.3125" y="168.75"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="kyn-3u-nTe">
@@ -212,7 +200,4 @@
             <point key="canvasLocation" x="2034" y="114"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ljf-pT-9hs"/>
-    </inferredMetricsTieBreakers>
 </document>

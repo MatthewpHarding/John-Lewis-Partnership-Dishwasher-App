@@ -15,14 +15,16 @@ class ProductTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        
+        tableView.register(UINib(nibName: "PriceInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceInfoTableViewCell")
+        tableView.register(UINib(nibName: "TitleTableViewCell", bundle: nil), forCellReuseIdentifier: "TitleTableViewCell")
+        tableView.register(UINib(nibName: "AttributeTableViewCell", bundle: nil), forCellReuseIdentifier: "AttributeTableViewCell")
+        tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
+        tableView.register(UINib(nibName: "ProductCodeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductCodeTableViewCell")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,16 +39,45 @@ class ProductTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-     
-        return cell
+        
+        guard let presenter = dataSource[safe: indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        switch presenter {
+        case let presenter as  PriceInfoCellPresenter:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PriceInfoTableViewCell", for: indexPath) as? PriceInfoTableViewCell {
+                cell.presenter = presenter
+                return cell
+            }
+        case let presenter as  TitleCellPresenter:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell", for: indexPath) as? TitleTableViewCell {
+                cell.presenter = presenter
+                return cell
+            }
+        case let presenter as  AttributeCellPresenter:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AttributeTableViewCell", for: indexPath) as? AttributeTableViewCell {
+                cell.presenter = presenter
+                return cell
+            }
+        case let presenter as  DescriptionCellPresenter:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as? DescriptionTableViewCell {
+                cell.presenter = presenter
+                return cell
+            }
+        case let presenter as  ProductCodeCellPresenter:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCodeTableViewCell", for: indexPath) as? ProductCodeTableViewCell {
+                cell.presenter = presenter
+                return cell
+            }
+            
+        default: break
+        }
+        return UITableViewCell()
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -102,6 +133,7 @@ class ProductTableViewController: UITableViewController {
     func reload(with dataSource: [ProductDetailPresenter], imageURLs: [URL]? = nil) {
         self.dataSource = dataSource
         galleryViewController?.imageURLs = imageURLs
+        tableView.reloadData()
     }
 
 }

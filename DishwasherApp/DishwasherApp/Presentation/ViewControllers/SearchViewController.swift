@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet var collectionView: UICollectionView!
     
     let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
@@ -28,16 +28,28 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard
+            let identifier = segue.identifier
+            else {
+                return
+        }
+        
+        switch identifier {
+        case "ProductDetail":
+            if
+                let productContainerViewController = segue.destination as? ProductContainerViewController,
+                let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first,
+                let selectedProduct = searchResult?.products[safe: selectedIndexPath.row] {
+                    productContainerViewController.productIdentifier = selectedProduct.identifier
+            }
+            
+        default: break
+        }
     }
-    */
 
     // MARK:- Reload Data
     

@@ -152,28 +152,7 @@ extension ProductContainerViewController {
         if let specificationDataSource = generateProductSpecificationDataSource(withProductDetail: productDetail) {
             datasource.append(contentsOf: specificationDataSource)
         }
-        
-        
-        
-        
-        
-        let locale = Locale.identifier(fromComponents: [NSLocale.Key.currencyCode: "GBP"])
-        let currencyFormatter = NumberFormatter()
-//        let locale = Locale(identifier: "GBP")
-        currencyFormatter.numberStyle = NumberFormatter.Style.currency
-        currencyFormatter.locale = locale
-        let currencyString = currencyFormatter.internationalCurrencySymbol
-        var format = currencyFormatter.positiveFormat
-        format = format?.replacingOccurrences(of: "¤", with: currencyFormatter.currencySymbol)
-        currencyFormatter.positiveFormat = format
-        
-        let price = NSDecimalNumber(string:"1.99")
-        let formattedCurrency = currencyFormatter.string(from: price)
-        
 
-        
-        
-        
         return datasource
     }
     
@@ -252,14 +231,4 @@ extension ProductContainerViewController {
             }
         }
     }
-}
-
-extension NSLocale {
-    
-    static func currencySymbolFromCode(code: String) -> String? {
-        let localeIdentifier = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.currencyCode.rawValue : code])
-        let locale = NSLocale(localeIdentifier: localeIdentifier)
-        return locale.object(forKey: NSLocale.Key.currencySymbol) as? String
-    }
-    
 }

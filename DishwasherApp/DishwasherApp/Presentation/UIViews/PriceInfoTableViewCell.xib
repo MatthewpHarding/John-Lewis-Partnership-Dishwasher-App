@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PriceInfoTableViewCell" customModule="DishwasherApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PriceInfoTableViewCell" rowHeight="112" id="Jv7-SA-6PX" customClass="PriceInfoTableViewCell" customModule="DishwasherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="448" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jv7-SA-6PX" id="Kj6-dh-3NR">
+                <rect key="frame" x="0.0" y="0.0" width="448" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gP-c1-pe6" userLabel="Title">
+                        <rect key="frame" x="16" y="16" width="416" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylb-j9-EV8" userLabel="Message">
+                        <rect key="frame" x="16" y="45" width="416" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaa-ms-jCZ" userLabel="Description">
+                        <rect key="frame" x="16" y="74" width="416" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Xaa-ms-jCZ" secondAttribute="trailing" constant="8" id="41z-Er-4bN"/>
+                    <constraint firstItem="8gP-c1-pe6" firstAttribute="leading" secondItem="Kj6-dh-3NR" secondAttribute="leadingMargin" constant="8" id="5uu-AF-IFH"/>
+                    <constraint firstItem="Xaa-ms-jCZ" firstAttribute="leading" secondItem="Kj6-dh-3NR" secondAttribute="leadingMargin" constant="8" id="AE0-nG-zuH"/>
+                    <constraint firstItem="Ylb-j9-EV8" firstAttribute="leading" secondItem="Kj6-dh-3NR" secondAttribute="leadingMargin" constant="8" id="Abf-8M-c5A"/>
+                    <constraint firstItem="Xaa-ms-jCZ" firstAttribute="top" secondItem="Ylb-j9-EV8" secondAttribute="bottom" constant="8" id="D7J-SY-9uz"/>
+                    <constraint firstItem="8gP-c1-pe6" firstAttribute="top" secondItem="Kj6-dh-3NR" secondAttribute="topMargin" constant="8" id="PIz-XV-zw1"/>
+                    <constraint firstItem="Ylb-j9-EV8" firstAttribute="top" secondItem="8gP-c1-pe6" secondAttribute="bottom" constant="8" id="d0A-Nh-G9w"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8gP-c1-pe6" secondAttribute="trailing" constant="8" id="dHI-jG-lV8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ylb-j9-EV8" secondAttribute="trailing" constant="8" id="reW-zn-vBT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Xaa-ms-jCZ" secondAttribute="bottom" constant="8" id="ulP-n4-2KA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="Xaa-ms-jCZ" id="FLc-pz-YdW"/>
+                <outlet property="messageLabel" destination="Ylb-j9-EV8" id="sUa-jY-B2v"/>
+                <outlet property="titleLabel" destination="8gP-c1-pe6" id="fMX-BU-qDU"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
