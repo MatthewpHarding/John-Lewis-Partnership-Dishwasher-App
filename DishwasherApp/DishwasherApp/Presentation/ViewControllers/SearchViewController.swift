@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
+    let searchTerm = "Dishwasher"
     let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
     var searchResult: SearchResult?
     
@@ -19,8 +20,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        refresh(withSearchTerm: "dishwasher")
+        
+        navigationItem.title = searchTerm
+        refresh(withSearchTerm: searchTerm)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +56,7 @@ class SearchViewController: UIViewController {
     // MARK:- Reload Data
     
     fileprivate func reloadData() {
+        self.navigationItem.title = String(format: NSLocalizedString("%@ (%li)", comment: ""), searchTerm, searchResult?.results ?? 0)
         collectionView.reloadData()
     }
 }
