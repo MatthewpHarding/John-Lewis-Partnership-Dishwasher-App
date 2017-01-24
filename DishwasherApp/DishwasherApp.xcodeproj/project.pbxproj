@@ -17,6 +17,11 @@
 		546B70A81E37E44D0005DF3B /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70A71E37E44D0005DF3B /* ProductDetailPresenter.swift */; };
 		546B70AA1E37E4860005DF3B /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70A91E37E4860005DF3B /* GalleryViewController.swift */; };
 		546B70AE1E37E4CA0005DF3B /* ProductDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70AD1E37E4CA0005DF3B /* ProductDetailPresenterTests.swift */; };
+		546B70B41E37EC3E0005DF3B /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70AF1E37EC3E0005DF3B /* AttributeTableViewCell.swift */; };
+		546B70B51E37EC3E0005DF3B /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70B01E37EC3E0005DF3B /* DescriptionTableViewCell.swift */; };
+		546B70B61E37EC3E0005DF3B /* PriceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70B11E37EC3E0005DF3B /* PriceInfoTableViewCell.swift */; };
+		546B70B71E37EC3E0005DF3B /* ProductCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70B21E37EC3E0005DF3B /* ProductCodeTableViewCell.swift */; };
+		546B70B81E37EC3E0005DF3B /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B70B31E37EC3E0005DF3B /* TitleTableViewCell.swift */; };
 		5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547999191E33F9E9004565E1 /* AppDelegate.swift */; };
 		547999211E33F9E9004565E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5479991F1E33F9E9004565E1 /* Main.storyboard */; };
 		547999231E33F9E9004565E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547999221E33F9E9004565E1 /* Assets.xcassets */; };
@@ -75,6 +80,11 @@
 		546B70A71E37E44D0005DF3B /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
 		546B70A91E37E4860005DF3B /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		546B70AD1E37E4CA0005DF3B /* ProductDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenterTests.swift; sourceTree = "<group>"; };
+		546B70AF1E37EC3E0005DF3B /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
+		546B70B01E37EC3E0005DF3B /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		546B70B11E37EC3E0005DF3B /* PriceInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		546B70B21E37EC3E0005DF3B /* ProductCodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCodeTableViewCell.swift; sourceTree = "<group>"; };
+		546B70B31E37EC3E0005DF3B /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		547999161E33F9E9004565E1 /* DishwasherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwasherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547999191E33F9E9004565E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547999201E33F9E9004565E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -458,6 +468,11 @@
 		5482957D1E3564FF00F5EA9E /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				546B70AF1E37EC3E0005DF3B /* AttributeTableViewCell.swift */,
+				546B70B01E37EC3E0005DF3B /* DescriptionTableViewCell.swift */,
+				546B70B11E37EC3E0005DF3B /* PriceInfoTableViewCell.swift */,
+				546B70B21E37EC3E0005DF3B /* ProductCodeTableViewCell.swift */,
+				546B70B31E37EC3E0005DF3B /* TitleTableViewCell.swift */,
 				5482957E1E3564FF00F5EA9E /* ProductCollectionViewCell.swift */,
 			);
 			path = UIViews;
@@ -651,16 +666,21 @@
 				5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
 				5482957F1E3564FF00F5EA9E /* ProductCollectionViewCell.swift in Sources */,
+				546B70B71E37EC3E0005DF3B /* ProductCodeTableViewCell.swift in Sources */,
 				548295611E35204B00F5EA9E /* Price.swift in Sources */,
 				5482955F1E35202000F5EA9E /* Price+Decodable.swift in Sources */,
+				546B70B51E37EC3E0005DF3B /* DescriptionTableViewCell.swift in Sources */,
 				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
 				5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
 				548295401E35063300F5EA9E /* RemoteProductAPI.swift in Sources */,
+				546B70B81E37EC3E0005DF3B /* TitleTableViewCell.swift in Sources */,
+				546B70B41E37EC3E0005DF3B /* AttributeTableViewCell.swift in Sources */,
 				546B70A81E37E44D0005DF3B /* ProductDetailPresenter.swift in Sources */,
 				546B70661E369E3F0005DF3B /* ProductDetail+Decodable.swift in Sources */,
 				5482957A1E355E8300F5EA9E /* SearchViewController.swift in Sources */,
+				546B70B61E37EC3E0005DF3B /* PriceInfoTableViewCell.swift in Sources */,
 				548295591E351BAA00F5EA9E /* Product+Decodable.swift in Sources */,
 				547999441E34BF58004565E1 /* NetworkingManager.swift in Sources */,
 				5479991A1E33F9E9004565E1 /* AppDelegate.swift in Sources */,
