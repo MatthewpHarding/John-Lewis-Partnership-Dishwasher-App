@@ -14,7 +14,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -35,11 +35,11 @@
                         <viewControllerLayoutGuide type="bottom" id="EsM-1l-MWw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fFL-3k-GiK">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-ll-sJp">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uo0-Mg-IyG">
                                     <size key="itemSize" width="260" height="266"/>
@@ -55,7 +55,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="266"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-ar-HG9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-ar-HG9">
                                                     <rect key="frame" x="18" y="18" width="224" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="38s-QY-8LT"/>
@@ -126,18 +126,18 @@
                         <viewControllerLayoutGuide type="bottom" id="NtA-9k-Dzp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JeQ-4X-fEd">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUS-mu-0MC" userLabel="main Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="448" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="448" height="960"/>
                                 <color key="backgroundColor" red="0.00016780518733494425" green="0.17208643713952387" blue="0.87283867385786795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="xGm-6e-5bg" kind="embed" identifier="MasterContent" id="rUr-oX-dLf"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-I2-DNC" userLabel="detail Container View">
-                                <rect key="frame" x="448" y="0.0" width="320" height="1024"/>
+                                <rect key="frame" x="448" y="0.0" width="320" height="960"/>
                                 <color key="backgroundColor" red="0.87283867385786795" green="0.33484766650432263" blue="0.14937395711390325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="WqG-zc-fgT"/>
@@ -173,7 +173,7 @@
             <objects>
                 <tableViewController id="xGm-6e-5bg" customClass="ProductTableViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" id="c4Y-Og-cuj">
-                        <rect key="frame" x="0.0" y="0.0" width="448" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="448" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="1" green="0.1533498482" blue="0.12749033260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -207,7 +207,7 @@
             <objects>
                 <tableViewController id="wIW-7x-fen" customClass="ProductTableViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="93l-OL-sqW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>

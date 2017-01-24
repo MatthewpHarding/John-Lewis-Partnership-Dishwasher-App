@@ -27,7 +27,9 @@ class ImageViewController: UIViewController {
         super.loadView()
         imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         imageView.translatesAutoresizingMaskIntoConstraints = true
+        imageView.contentMode = .scaleAspectFit
         imageView.frame.size = view.bounds.size
+        
         view.addSubview(imageView)
     }
 }
