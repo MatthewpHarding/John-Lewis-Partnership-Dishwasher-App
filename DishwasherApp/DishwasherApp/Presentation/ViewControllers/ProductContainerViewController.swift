@@ -53,7 +53,7 @@ class ProductContainerViewController: UIViewController {
         
         setLayoutType(for: size)
         layoutContainerViews(for: layoutType, withSize: size)
-        
+        reloadData()
         coordinator.animate(alongsideTransition: { [weak self] _ in
             self?.view.layoutIfNeeded()
         }, completion: nil)
