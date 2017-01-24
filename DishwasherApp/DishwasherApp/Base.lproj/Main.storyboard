@@ -91,6 +91,7 @@
                                             <outlet property="imageView" destination="0fY-ar-HG9" id="REC-OA-FEn"/>
                                             <outlet property="subtitleLabel" destination="J9G-Ul-63o" id="LAH-Lo-QIA"/>
                                             <outlet property="titleLabel" destination="FXZ-7q-DUM" id="iey-5g-QLW"/>
+                                            <segue destination="0vO-9A-l0k" kind="show" id="zCi-CQ-yDH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -116,5 +117,102 @@
             </objects>
             <point key="canvasLocation" x="784.375" y="-630.46875"/>
         </scene>
+        <!--Product Container View Controller-->
+        <scene sceneID="kVN-fG-H2h">
+            <objects>
+                <viewController id="0vO-9A-l0k" customClass="ProductContainerViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aLF-ml-zEy"/>
+                        <viewControllerLayoutGuide type="bottom" id="NtA-9k-Dzp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JeQ-4X-fEd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUS-mu-0MC" userLabel="main Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="448" height="1024"/>
+                                <connections>
+                                    <segue destination="xGm-6e-5bg" kind="embed" id="YJz-IP-ZjW"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-I2-DNC" userLabel="detail Container View">
+                                <rect key="frame" x="448" y="0.0" width="320" height="1024"/>
+                                <color key="backgroundColor" red="0.87283867385786795" green="0.33484766650432263" blue="0.14937395711390325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="WqG-zc-fgT"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="xGm-6e-5bg" kind="embed" identifier="DetailContent" id="ljf-pT-9hs"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NtA-9k-Dzp" firstAttribute="top" secondItem="ZUS-mu-0MC" secondAttribute="bottom" id="JFd-ss-Pn4"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ls-I2-DNC" secondAttribute="trailing" id="LKA-D9-U0f"/>
+                            <constraint firstItem="0Ls-I2-DNC" firstAttribute="leading" secondItem="ZUS-mu-0MC" secondAttribute="trailing" id="O8E-ie-NeG"/>
+                            <constraint firstItem="ZUS-mu-0MC" firstAttribute="top" secondItem="JeQ-4X-fEd" secondAttribute="top" id="P7Q-pz-6Jg"/>
+                            <constraint firstItem="NtA-9k-Dzp" firstAttribute="top" secondItem="0Ls-I2-DNC" secondAttribute="bottom" id="ada-nJ-Yxg"/>
+                            <constraint firstItem="ZUS-mu-0MC" firstAttribute="leading" secondItem="JeQ-4X-fEd" secondAttribute="leading" id="bpj-7c-1Np"/>
+                            <constraint firstItem="0Ls-I2-DNC" firstAttribute="top" secondItem="JeQ-4X-fEd" secondAttribute="topMargin" id="nGZ-lz-9CG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailContainerView" destination="0Ls-I2-DNC" id="uXX-YD-FY0"/>
+                        <outlet property="detailContainerViewWidthConstraint" destination="WqG-zc-fgT" id="Ycp-R9-PEj"/>
+                        <outlet property="mainContainerView" destination="ZUS-mu-0MC" id="Or0-gp-v8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqV-gp-NyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1475.78125" y="-630.46875"/>
+        </scene>
+        <!--Product Table View Controller-->
+        <scene sceneID="Zou-GA-q02">
+            <objects>
+                <tableViewController id="xGm-6e-5bg" customClass="ProductTableViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c4Y-Og-cuj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="1" green="0.1533498482" blue="0.12749033260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="gCg-1k-GeW">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <segue destination="TAG-n3-Ibm" kind="embed" id="MtA-8s-nhh"/>
+                            </connections>
+                        </containerView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tkh-4o-4VH">
+                                <rect key="frame" x="0.0" y="428" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tkh-4o-4VH" id="pp7-Rn-1se">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xGm-6e-5bg" id="MWS-Fw-FwL"/>
+                            <outlet property="delegate" destination="xGm-6e-5bg" id="H58-TE-8uZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oX-Ge-2GK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="114"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="kyn-3u-nTe">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TAG-n3-Ibm" customClass="GalleryViewController" customModule="DishwasherApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5f-yO-3TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="114"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ljf-pT-9hs"/>
+    </inferredMetricsTieBreakers>
 </document>
