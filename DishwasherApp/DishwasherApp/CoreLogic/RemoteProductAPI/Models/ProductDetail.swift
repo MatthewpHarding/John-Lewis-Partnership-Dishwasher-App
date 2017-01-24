@@ -15,7 +15,7 @@ struct ProductDetail {
     let code: String
     let imageURLs: [URL]
     let information: String
-    let specialOffer: String
+    let specialOffer: String?
     let includedServices: [String]
     let features: [ProductFeature]
 }
