@@ -13,8 +13,8 @@ class DescriptionTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     var presenter: DescriptionCellPresenter? { didSet {
+        
         titleLabel.text = presenter?.text
         }
     }
-   
 }

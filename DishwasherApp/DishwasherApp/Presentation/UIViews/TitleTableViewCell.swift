@@ -13,6 +13,7 @@ class TitleTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     var presenter: TitleCellPresenter? { didSet {
+        
         titleLabel.text = presenter?.title
         }
     }

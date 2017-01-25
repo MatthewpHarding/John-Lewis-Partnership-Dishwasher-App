@@ -14,9 +14,9 @@ class AttributeTableViewCell: UITableViewCell {
     @IBOutlet var rightLabel: UILabel!
     
     var presenter: AttributeCellPresenter? { didSet {
+        
         leftLabel.text = presenter?.leftText
         rightLabel.text = presenter?.rightText
         }
     }
-  
 }

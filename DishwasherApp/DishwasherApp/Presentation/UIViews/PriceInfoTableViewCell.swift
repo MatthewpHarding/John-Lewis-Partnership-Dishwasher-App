@@ -15,10 +15,10 @@ class PriceInfoTableViewCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     
     var presenter: PriceInfoCellPresenter? { didSet {
+        
         titleLabel.text = presenter?.title
         messageLabel.text = presenter?.priorityMessage
         descriptionLabel.text = presenter?.description
         }
     }
-
 }

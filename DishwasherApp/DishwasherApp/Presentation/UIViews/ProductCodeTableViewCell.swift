@@ -13,8 +13,8 @@ class ProductCodeTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     var presenter: ProductCodeCellPresenter? { didSet {
+        
         titleLabel.text = presenter?.text
         }
     }
-
 }
