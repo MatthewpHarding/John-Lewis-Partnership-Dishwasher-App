@@ -274,15 +274,15 @@
 		547999181E33F9E9004565E1 /* DishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
+				547999191E33F9E9004565E1 /* AppDelegate.swift */,
+				5479991F1E33F9E9004565E1 /* Main.storyboard */,
+				547999241E33F9E9004565E1 /* LaunchScreen.storyboard */,
+				547999221E33F9E9004565E1 /* Assets.xcassets */,
+				547999271E33F9E9004565E1 /* Info.plist */,
 				54692FBE1E3835DE009369FD /* CocoaTouchEnhancements */,
 				546B70361E3570290005DF3B /* SwiftFoundationEnhancements */,
 				548295771E355E8300F5EA9E /* Presentation */,
 				5479993F1E34BF58004565E1 /* Core Logic */,
-				547999191E33F9E9004565E1 /* AppDelegate.swift */,
-				5479991F1E33F9E9004565E1 /* Main.storyboard */,
-				547999221E33F9E9004565E1 /* Assets.xcassets */,
-				547999241E33F9E9004565E1 /* LaunchScreen.storyboard */,
-				547999271E33F9E9004565E1 /* Info.plist */,
 			);
 			path = DishwasherApp;
 			sourceTree = "<group>";
