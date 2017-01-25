@@ -9,6 +9,7 @@
 import Foundation
 
 enum RemoteProductAPIError: Error {
+    
     case couldNotProccessRequest
     case deserializationFailure
     case networkingError (NetworkingError)
@@ -36,6 +37,7 @@ struct RemoteProductAPI {
         
         networking.performHTTPURLRequest(url: url, method: .get, headers: nil, body: nil) { result in
             switch result {
+                
             case .success(let networkingResponse):
                 if case let .success (searchResult) = self.productParser.parseSearchResult(from: networkingResponse) {
                     completion(.success(searchResult))
@@ -69,6 +71,7 @@ struct RemoteProductAPI {
         
         networking.performHTTPURLRequest(url: url, method: .get, headers: nil, body: nil) { result in
             switch result {
+                
             case .success(let networkingResponse):
                 if case let .success (productDetail) = self.productParser.parseProductDetail(from: networkingResponse) {
                     completion(.success(productDetail))

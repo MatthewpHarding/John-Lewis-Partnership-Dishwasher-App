@@ -29,10 +29,12 @@ class ProductTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return dataSource.count
     }
     
@@ -77,6 +79,7 @@ class ProductTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard
             let identifier = segue.identifier
             else {
@@ -91,12 +94,14 @@ class ProductTableViewController: UITableViewController {
     }
 
     func reload(with dataSource: [ProductDetailPresenter], imageURLs: [URL]? = nil) {
+        
         self.dataSource = dataSource
         galleryViewController?.imageURLs = imageURLs
         tableView.reloadData()
     }
     
     func reloadInformation(with dataSource: [ProductDetailPresenter]) {
+        
         self.dataSource = dataSource
         tableView.reloadData()
     }

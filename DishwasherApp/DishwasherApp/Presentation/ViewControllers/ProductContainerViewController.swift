@@ -60,6 +60,7 @@ class ProductContainerViewController: UIViewController {
     }
     
     private func setLayoutType(for size: CGSize) {
+        
         let shouldDisplayMoreDetailsContainer = size.width > size.height ? true : false
         layoutType = shouldDisplayMoreDetailsContainer ? .split : .full
     }
@@ -80,6 +81,7 @@ class ProductContainerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard
             let identifier = segue.identifier
             else {
@@ -233,6 +235,7 @@ extension ProductContainerViewController {
 extension ProductContainerViewController {
     
     fileprivate func refresh(withProductIdentifier productIdentifier: String) {
+        
         remoteProductAPI.getDetails(for: productIdentifier) { [weak self] result in
             
             DispatchQueue.main.async()  { [weak self] in

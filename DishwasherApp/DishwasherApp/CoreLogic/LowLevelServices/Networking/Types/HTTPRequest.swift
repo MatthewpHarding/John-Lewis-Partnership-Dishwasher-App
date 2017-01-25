@@ -72,7 +72,8 @@ enum HTTPStatusCodeDomain: Int {
     case clientError = 400
     case serverError = 500
     
-    static func isSuccessful(rawStatusCode: Int) -> Bool{
+    static func isSuccessful(rawStatusCode: Int) -> Bool {
+        
         if rawStatusCode >= success.rawValue && rawStatusCode < redirectional.rawValue {
             return true
         }

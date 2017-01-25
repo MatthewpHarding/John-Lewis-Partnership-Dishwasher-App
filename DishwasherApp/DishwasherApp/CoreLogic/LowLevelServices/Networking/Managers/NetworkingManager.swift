@@ -22,7 +22,6 @@ struct NetworkingManager: Networking {
         
         urlRequestExecuter.executeURLRequest(urlRequest: urlRequest) {  (responseData: Data?, urlResponse: URLResponse?, error: Error?) in
             
-            // handle networking errors
             if let urlError = error as? NSError {
                 completion(.error(NetworkingError(urlError: urlError)))
                 return
@@ -40,7 +39,6 @@ struct NetworkingManager: Networking {
                 return
             }
             
-            // inspect any recieved data
             switch self.deserialize(responseData, serializer: self.jsonSerializer) {
             case .success(let deserializedData):
                 completion(.success(deserializedData))
