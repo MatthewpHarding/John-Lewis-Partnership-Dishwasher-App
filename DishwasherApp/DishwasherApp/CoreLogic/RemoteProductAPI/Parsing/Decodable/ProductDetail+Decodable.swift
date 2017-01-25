@@ -24,7 +24,7 @@ extension ProductDetail: Decodable {
         let secondSet = firstSet
             <*> json <|| ["media", "images", "urls"]
             <*> json <| ["details", "productInformation"]
-            <*> json <| "displaySpecialOffer"
+            <*> json <|? "displaySpecialOffer"
         
         return secondSet
             <*> json <|| ["additionalServices", "includedServices"]
