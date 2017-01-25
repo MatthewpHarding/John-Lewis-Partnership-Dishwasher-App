@@ -22,6 +22,8 @@ class ProductContainerViewController: UIViewController {
     
     @IBOutlet var detailContainerView: UIView!
     var productDetailTableViewController: ProductTableViewController?
+    
+    @IBOutlet var detailContainerViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet var detailContainerViewWidthConstraint: NSLayoutConstraint!
     
     let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
@@ -70,10 +72,13 @@ class ProductContainerViewController: UIViewController {
     private func layoutContainerViews(for layoutType: LayoutType, withSize size: CGSize) {
         
         let widthPercentage: CGFloat = 0.3
-        let detailContainerViewWidth = layoutType == .split ? (widthPercentage * size.width) : 0.0
+        let detailContainerViewWidth = widthPercentage * size.width
+        let valueToHideDetailView = -detailContainerViewWidth
+        let trailingPosition = layoutType == .split ? 0.0 : valueToHideDetailView
         
         view.layoutIfNeeded()
         detailContainerViewWidthConstraint.constant = detailContainerViewWidth
+        detailContainerViewTrailingConstraint.constant = trailingPosition
         detailContainerView.setNeedsLayout()
     }
     

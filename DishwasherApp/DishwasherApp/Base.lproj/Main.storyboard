@@ -168,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="detailContainerView" destination="0Ls-I2-DNC" id="uXX-YD-FY0"/>
+                        <outlet property="detailContainerViewTrailingConstraint" destination="LKA-D9-U0f" id="89G-Rg-xJH"/>
                         <outlet property="detailContainerViewWidthConstraint" destination="WqG-zc-fgT" id="Ycp-R9-PEj"/>
                         <outlet property="mainContainerView" destination="ZUS-mu-0MC" id="Or0-gp-v8g"/>
                     </connections>
