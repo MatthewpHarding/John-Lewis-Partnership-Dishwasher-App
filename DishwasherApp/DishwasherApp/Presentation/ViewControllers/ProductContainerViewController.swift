@@ -158,9 +158,6 @@ extension ProductContainerViewController {
         
         var datasource: [ProductDetailPresenter] = []
         
-        let price = PriceInfoCellPresenter(productDetail: productDetail)
-        datasource.append(price)
-        
         let title = TitleCellPresenter(title: NSLocalizedString("Product Information", comment: ""))
         datasource.append(title)
         
@@ -201,6 +198,9 @@ extension ProductContainerViewController {
         
         var datasource: [ProductDetailPresenter] = []
         
+        let price = PriceInfoCellPresenter(productDetail: productDetail)
+        datasource.append(price)
+        
         let title = TitleCellPresenter(title: NSLocalizedString("Product Information", comment: ""))
         datasource.append(title)
         
@@ -235,7 +235,7 @@ extension ProductContainerViewController {
     fileprivate func refresh(withProductIdentifier productIdentifier: String) {
         remoteProductAPI.getDetails(for: productIdentifier) { [weak self] result in
             
-            DispatchQueue.main.async()  {
+            DispatchQueue.main.async()  { [weak self] in
                 switch result {
                 case .success(let productDetail):
                     
