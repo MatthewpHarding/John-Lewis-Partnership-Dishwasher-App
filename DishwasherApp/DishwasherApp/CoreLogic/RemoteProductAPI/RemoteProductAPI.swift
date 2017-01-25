@@ -81,7 +81,5 @@ struct RemoteProductAPI {
                 completion(.error(.networkingError(networkingError)))
             }
         }
-        
     }
 }
-

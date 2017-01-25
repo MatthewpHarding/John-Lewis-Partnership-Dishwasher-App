@@ -65,6 +65,7 @@ enum HTTPStatusCode: Int {
 
 // https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 enum HTTPStatusCodeDomain: Int {
+    
     case informational = 100
     case success = 200
     case redirectional = 300
@@ -80,6 +81,7 @@ enum HTTPStatusCodeDomain: Int {
 }
 
 enum HTTPMethod: String {
+    
     case get = "GET"
     case post = "POST"
     case put = "PUT"

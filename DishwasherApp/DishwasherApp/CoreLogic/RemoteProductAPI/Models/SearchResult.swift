@@ -9,6 +9,7 @@
 import Foundation
 
 struct SearchResult {
+    
     let products: [Product]
     let results: Int
 }

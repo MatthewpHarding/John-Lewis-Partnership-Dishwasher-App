@@ -14,5 +14,4 @@ typealias NetworkResponseResult = (Result<NetworkingResponse, NetworkingError>)
 protocol Networking {
     
     func performHTTPURLRequest(url: URL, method: HTTPMethod, headers: [String: String]?, body: Data?, completion: @escaping (NetworkResponseResult) -> Void)
-    
 }

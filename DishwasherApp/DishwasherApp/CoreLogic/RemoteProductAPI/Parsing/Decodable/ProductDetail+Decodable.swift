@@ -32,7 +32,6 @@ extension ProductDetail: Decodable {
     }
 }
 
-
 extension ProductFeature: Decodable {
     
     public static func decode(_ json: JSON) -> Decoded<ProductFeature> {

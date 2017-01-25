@@ -9,11 +9,13 @@
 import Foundation
 
 enum SerializationError: Error {
+    
     case serializationFailure
     case deserializationFailure
 }
 
 enum NetworkConnectivityError: Error {
+    
     case failedToConnectToHost
     case noConnection
     case internationalRoamingOff
@@ -23,6 +25,7 @@ enum NetworkConnectivityError: Error {
 }
 
 enum NetworkingError: Error {
+    
     case dataConnection (NetworkConnectivityError)
     case unsuccessfulHTTPStatusCode (HTTPStatusCode?)
     case failedToFindResource

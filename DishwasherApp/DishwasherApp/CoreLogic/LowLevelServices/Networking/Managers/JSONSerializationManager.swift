@@ -21,5 +21,4 @@ struct JSONSerializationManager: JSONSerializer {
     func jsonObjectWithData(data: Data) throws -> Any {
         return try JSONSerialization.jsonObject(with: data, options: .allowFragments)
     }
-    
 }

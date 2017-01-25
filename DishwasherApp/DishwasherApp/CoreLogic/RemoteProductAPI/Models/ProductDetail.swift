@@ -21,11 +21,13 @@ struct ProductDetail {
 }
 
 struct ProductFeature {
+    
     let name: String
     let attributes: [ProductAttribute]
 }
 
 struct ProductAttribute {
+    
     let identifier: String
     let name: String
     let value: String

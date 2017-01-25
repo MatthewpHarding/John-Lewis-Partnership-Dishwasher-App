@@ -19,5 +19,4 @@ extension Price: Decodable {
             <^> json <| "now"
             <*> json <| "currency"
     }
-    
 }
