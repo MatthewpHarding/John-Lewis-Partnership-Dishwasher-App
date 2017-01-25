@@ -66,7 +66,6 @@ class GalleryViewController: UIPageViewController {
     private func reloadViewControllers() {
         
         guard let url = imageURLs?.first else {
-            setViewControllers(nil, direction: .forward, animated: false, completion: nil)
             return
         }
         

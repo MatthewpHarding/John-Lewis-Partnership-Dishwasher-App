@@ -53,7 +53,7 @@ class ProductContainerViewController: UIViewController {
         
         setLayoutType(for: size)
         layoutContainerViews(for: layoutType, withSize: size)
-        reloadData()
+        reloadInformation()
         coordinator.animate(alongsideTransition: { [weak self] _ in
             self?.view.layoutIfNeeded()
         }, completion: nil)
@@ -98,7 +98,7 @@ class ProductContainerViewController: UIViewController {
     
     // MARK:- Reload Data
     
-    fileprivate func reloadData() {
+    fileprivate func reload() {
         
         guard let productDetail = self.productDetail else {
             return
@@ -115,6 +115,27 @@ class ProductContainerViewController: UIViewController {
             
             productTableViewController?.reload(with: compactDataSource, imageURLs: productDetail.imageURLs)
             productDetailTableViewController?.reload(with: companionDataSource)
+            
+        }
+    }
+    
+    fileprivate func reloadInformation() {
+        
+        guard let productDetail = self.productDetail else {
+            return
+        }
+        
+        switch layoutType {
+        case .full:
+            let dataSource = generateFullDataSource(withProductDetail: productDetail)
+            productTableViewController?.reloadInformation(with: dataSource)
+            
+        case .split:
+            let compactDataSource = generateCompactDataSource(withProductDetail: productDetail)
+            let companionDataSource = generateCompactCompanionDataSource(withProductDetail: productDetail)
+            
+            productTableViewController?.reloadInformation(with: compactDataSource)
+            productDetailTableViewController?.reloadInformation(with: companionDataSource)
         }
     }
 }
@@ -223,7 +244,7 @@ extension ProductContainerViewController {
                     }
                     
                     strongSelf.productDetail = productDetail
-                    strongSelf.reloadData()
+                    strongSelf.reload()
                     
                 case .error: break
                     // TODO display a retry screen

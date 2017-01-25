@@ -136,5 +136,10 @@ class ProductTableViewController: UITableViewController {
         galleryViewController?.imageURLs = imageURLs
         tableView.reloadData()
     }
+    
+    func reloadInformation(with dataSource: [ProductDetailPresenter]) {
+        self.dataSource = dataSource
+        tableView.reloadData()
+    }
 
 }
