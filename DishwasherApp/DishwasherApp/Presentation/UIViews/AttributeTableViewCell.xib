@@ -15,27 +15,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UY9-Uv-2Nk" id="FNK-du-EtM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCp-3a-QLd">
-                        <rect key="frame" x="16" y="16" width="42" height="12"/>
+                        <rect key="frame" x="40" y="16" width="42" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5G-Xf-j5d">
-                        <rect key="frame" x="66" y="16" width="293" height="11.5"/>
+                        <rect key="frame" x="90" y="16" width="245" height="11.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="cCp-3a-QLd" firstAttribute="top" secondItem="FNK-du-EtM" secondAttribute="top" constant="16" id="2Cm-HE-QoN"/>
                     <constraint firstItem="E5G-Xf-j5d" firstAttribute="top" secondItem="FNK-du-EtM" secondAttribute="top" constant="16" id="EGH-wz-eOA"/>
-                    <constraint firstItem="cCp-3a-QLd" firstAttribute="leading" secondItem="FNK-du-EtM" secondAttribute="leading" constant="16" id="EtC-hf-RcW"/>
-                    <constraint firstAttribute="trailing" secondItem="E5G-Xf-j5d" secondAttribute="trailing" constant="16" id="MQ5-an-Mog"/>
+                    <constraint firstItem="cCp-3a-QLd" firstAttribute="leading" secondItem="FNK-du-EtM" secondAttribute="leading" constant="40" id="EtC-hf-RcW"/>
+                    <constraint firstAttribute="trailing" secondItem="E5G-Xf-j5d" secondAttribute="trailing" constant="40" id="MQ5-an-Mog"/>
                     <constraint firstAttribute="bottom" secondItem="E5G-Xf-j5d" secondAttribute="bottom" constant="16" id="WDC-fw-6Eh"/>
                     <constraint firstAttribute="bottom" secondItem="cCp-3a-QLd" secondAttribute="bottom" constant="16" id="XWH-zQ-dIr"/>
                     <constraint firstItem="E5G-Xf-j5d" firstAttribute="leading" secondItem="cCp-3a-QLd" secondAttribute="trailing" constant="8" id="Y7k-cZ-qli"/>

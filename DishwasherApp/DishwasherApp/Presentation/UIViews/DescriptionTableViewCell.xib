@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,21 +15,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4NM-te-ylm" id="9VT-9h-MJ9">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-tK-Fts">
-                        <rect key="frame" x="16" y="16" width="343" height="11.5"/>
+                        <rect key="frame" x="40" y="16" width="295" height="11.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="Xd0-tK-Fts" secondAttribute="trailing" constant="8" id="CNv-nb-Fo1"/>
-                    <constraint firstItem="Xd0-tK-Fts" firstAttribute="top" secondItem="9VT-9h-MJ9" secondAttribute="topMargin" constant="8" id="PLL-ye-b94"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Xd0-tK-Fts" secondAttribute="bottom" constant="8" id="ebr-zz-bNW"/>
-                    <constraint firstItem="Xd0-tK-Fts" firstAttribute="leading" secondItem="9VT-9h-MJ9" secondAttribute="leadingMargin" constant="8" id="qkH-fN-JZE"/>
+                    <constraint firstAttribute="trailing" secondItem="Xd0-tK-Fts" secondAttribute="trailing" constant="40" id="DAi-cf-mHs"/>
+                    <constraint firstAttribute="bottom" secondItem="Xd0-tK-Fts" secondAttribute="bottom" constant="16" id="FIQ-oY-RWM"/>
+                    <constraint firstItem="Xd0-tK-Fts" firstAttribute="top" secondItem="9VT-9h-MJ9" secondAttribute="top" constant="16" id="Ruo-Ur-OZz"/>
+                    <constraint firstItem="Xd0-tK-Fts" firstAttribute="leading" secondItem="9VT-9h-MJ9" secondAttribute="leading" constant="40" id="YCh-Lk-Nrg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
