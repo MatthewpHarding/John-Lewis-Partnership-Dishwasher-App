@@ -25,11 +25,11 @@ class ImageViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        
         imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         imageView.translatesAutoresizingMaskIntoConstraints = true
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = view.bounds.size
-        
         view.addSubview(imageView)
     }
 }
@@ -46,7 +46,9 @@ class GalleryViewController: UIPageViewController {
         super.viewDidLoad()
         
         dataSource = self
+        setupPageControl()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,6 +64,13 @@ class GalleryViewController: UIPageViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    private func setupPageControl() {
+        
+        let pageControlAppearance = UIPageControl.appearance(whenContainedInInstancesOf: [GalleryViewController.self])
+        pageControlAppearance.pageIndicatorTintColor = UIColor.lightGray
+        pageControlAppearance.currentPageIndicatorTintColor = UIColor.darkGray
+    }
     
     private func reloadViewControllers() {
         
@@ -79,11 +88,19 @@ class GalleryViewController: UIPageViewController {
 
 extension GalleryViewController: UIPageViewControllerDataSource {
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return imageURLs?.count ?? 0
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return nextViewController(from: viewController, withIndexModifier: -1)
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return nextViewController(from: viewController, withIndexModifier: +1)
     }
     
