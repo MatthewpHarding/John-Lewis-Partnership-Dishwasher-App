@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     let searchTerm = "Dishwasher"
     let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
     var searchResult: SearchResult?
+    var datasource: [ProductPresenter] = []
     
     // MARK:- UIViewController Overrides
     
@@ -59,6 +60,10 @@ class SearchViewController: UIViewController {
         self.navigationItem.title = String(format: NSLocalizedString("%@ (%li)", comment: ""), searchTerm, searchResult?.results ?? 0)
         collectionView.reloadData()
     }
+    
+    fileprivate func generateDataSource(withSearchResult searchResult: SearchResult) -> [ProductPresenter] {
+        return searchResult.products.map({ ProductPresenter(product: $0) })
+    }
 }
 
 // MARK:- UICollectionView DataSource
@@ -66,22 +71,20 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return searchResult?.products.count ?? 0
+        return datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell,
-        let searchResult = self.searchResult,
-        let product = searchResult.products[safe: indexPath.row]
+            let presenter = datasource[safe: indexPath.row]
         else {
             return UICollectionViewCell()
         }
         
-        cell.titleLabel.text = product.title
-        cell.subtitleLabel.text = product.price.now
-        
-        cell.imageUrl = product.imageUrl
+        cell.titleLabel.text = presenter.title
+        cell.subtitleLabel.text = presenter.subTitle
+        cell.imageUrl = presenter.imageUrl
         
         return cell
     }
@@ -95,11 +98,16 @@ extension SearchViewController {
     fileprivate func refresh(withSearchTerm searchTerm: String) {
         remoteProductAPI.search(for: searchTerm) { [weak self] result in
             
-            DispatchQueue.main.async()  {
+            DispatchQueue.main.async()  {  [weak self] in
+                guard let strongSelf = self else {
+                    return
+                }
+                
                 switch result {
                 case .success(let searchResult):
-                    self?.searchResult = searchResult
-                    self?.reloadData()
+                    strongSelf.searchResult = searchResult
+                    strongSelf.datasource = strongSelf.generateDataSource(withSearchResult: searchResult)
+                    strongSelf.reloadData()
                     
                 case .error: break
                     // TODO display a retry screen
