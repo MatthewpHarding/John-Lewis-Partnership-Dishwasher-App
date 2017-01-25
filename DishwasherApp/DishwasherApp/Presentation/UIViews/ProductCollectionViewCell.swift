@@ -33,6 +33,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private func cancelImageDownload() {
         imageView.kf.cancelDownloadTask()
     }
-
     
 }

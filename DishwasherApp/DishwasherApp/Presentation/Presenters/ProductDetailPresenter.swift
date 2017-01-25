@@ -8,11 +8,8 @@
 
 import Foundation
 
-
 // Utilise a ghost protocol for type safety
-protocol ProductDetailPresenter {
-    
-}
+protocol ProductDetailPresenter { }
 
 struct PriceInfoCellPresenter: ProductDetailPresenter {
     let title: String
