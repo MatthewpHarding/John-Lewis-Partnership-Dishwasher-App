@@ -20,7 +20,11 @@ struct PriceInfoCellPresenter: ProductDetailPresenter {
     let description: String
     
     init(productDetail: ProductDetail) {
-        title = productDetail.price.now
+        
+        let price = productDetail.price.now
+        let currencyFormatter = NumberFormatter(internationalCurrencyCode: productDetail.price.currency)
+        title = currencyFormatter.string(from: productDetail.price.now) ?? price
+        
         priorityMessage = productDetail.specialOffer
         description = PriceInfoCellPresenter.descriptionText(from: productDetail.includedServices)
     }

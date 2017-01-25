@@ -15,7 +15,7 @@ class ProductDetailPresenterTests: XCTestCase {
         let productDetail = testableProductDetail()
         
         let priceInfoCellPresenter = PriceInfoCellPresenter(productDetail: productDetail)
-        XCTAssertEqual(priceInfoCellPresenter.title, "39.95")
+        XCTAssertEqual(priceInfoCellPresenter.title, "£\u{00A0}39.95") //\u{00A0} is a non breaking space
         XCTAssertEqual(priceInfoCellPresenter.priorityMessage, "We have a special offer")
         XCTAssertEqual(priceInfoCellPresenter.description, "This is our guarantee\nThis is our second guarantee\nThis is our third guarantee")
     }
