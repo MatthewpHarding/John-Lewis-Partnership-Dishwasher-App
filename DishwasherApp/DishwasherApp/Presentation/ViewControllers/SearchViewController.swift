@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = searchTerm
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         refresh(withSearchTerm: searchTerm)
     }
 
@@ -48,6 +49,7 @@ class SearchViewController: UIViewController {
                 let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first,
                 let selectedProduct = searchResult?.products[safe: selectedIndexPath.row] {
                     productContainerViewController.productIdentifier = selectedProduct.identifier
+                    productContainerViewController.title = selectedProduct.title
             }
             
         default: break
