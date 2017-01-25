@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39F3F454AC017C2B88447580 /* Pods_DishwasherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99612995AB09D16967452979 /* Pods_DishwasherApp.framework */; };
 		5459750B1E39419100BB3BE1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459750A1E39419100BB3BE1 /* ImageViewController.swift */; };
+		5459750D1E39654100BB3BE1 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459750C1E39654100BB3BE1 /* String+HTML.swift */; };
+		5459750F1E39657D00BB3BE1 /* String+HTMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459750E1E39657D00BB3BE1 /* String+HTMLTests.swift */; };
 		54692FC11E3835DE009369FD /* NSLocale+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FC01E3835DE009369FD /* NSLocale+Currency.swift */; };
 		54692FC31E383902009369FD /* NSFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FC21E383902009369FD /* NSFormatter+Currency.swift */; };
 		54692FCC1E38A703009369FD /* NSFormatter+CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FCA1E38A703009369FD /* NSFormatter+CurrencyTests.swift */; };
@@ -84,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		5459750A1E39419100BB3BE1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		5459750C1E39654100BB3BE1 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		5459750E1E39657D00BB3BE1 /* String+HTMLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTMLTests.swift"; sourceTree = "<group>"; };
 		54692FC01E3835DE009369FD /* NSLocale+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+Currency.swift"; sourceTree = "<group>"; };
 		54692FC21E383902009369FD /* NSFormatter+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFormatter+Currency.swift"; sourceTree = "<group>"; };
 		54692FCA1E38A703009369FD /* NSFormatter+CurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFormatter+CurrencyTests.swift"; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				54692FC01E3835DE009369FD /* NSLocale+Currency.swift */,
+				5459750C1E39654100BB3BE1 /* String+HTML.swift */,
 				54692FC21E383902009369FD /* NSFormatter+Currency.swift */,
 			);
 			path = Extensions;
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				54692FCA1E38A703009369FD /* NSFormatter+CurrencyTests.swift */,
+				5459750E1E39657D00BB3BE1 /* String+HTMLTests.swift */,
 				54692FCB1E38A703009369FD /* NSLocale+Currency.swift */,
 			);
 			path = Extensions;
@@ -738,6 +744,7 @@
 				546B70621E369A310005DF3B /* ProductDetail.swift in Sources */,
 				548295671E35244700F5EA9E /* SearchResult+Decodable.swift in Sources */,
 				5482956C1E352C4200F5EA9E /* ProductParser.swift in Sources */,
+				5459750D1E39654100BB3BE1 /* String+HTML.swift in Sources */,
 				547999651E34C49F004565E1 /* NetworkingError.swift in Sources */,
 				5482957F1E3564FF00F5EA9E /* ProductCollectionViewCell.swift in Sources */,
 				546B70BA1E37EFA30005DF3B /* ProductContainerViewController.swift in Sources */,
@@ -780,6 +787,7 @@
 				547999711E34E5D4004565E1 /* HTTPRequestTest.swift in Sources */,
 				54692FCC1E38A703009369FD /* NSFormatter+CurrencyTests.swift in Sources */,
 				54692FCD1E38A703009369FD /* NSLocale+Currency.swift in Sources */,
+				5459750F1E39657D00BB3BE1 /* String+HTMLTests.swift in Sources */,
 				548295351E34EB3200F5EA9E /* NetworkingErrorTests.swift in Sources */,
 				548295721E353A6A00F5EA9E /* NetworkingMock.swift in Sources */,
 				546B70AE1E37E4CA0005DF3B /* ProductDetailPresenterTests.swift in Sources */,
