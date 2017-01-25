@@ -46,11 +46,6 @@ class ProductContainerViewController: UIViewController {
         layoutContainerViews(for: layoutType, withSize: size)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         setLayoutType(for: size)
