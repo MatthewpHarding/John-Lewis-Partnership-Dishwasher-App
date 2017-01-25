@@ -8,6 +8,32 @@
 
 import UIKit
 
+private struct Config {
+    
+    struct nibName {
+        
+        static let priceInfo = "PriceInfoTableViewCell"
+        static let title = "TitleTableViewCell"
+        static let attribute = "AttributeTableViewCell"
+        static let description = "DescriptionTableViewCell"
+        static let productCode = "ProductCodeTableViewCell"
+    }
+    
+    struct cellIdentifiers {
+        
+        static let priceInfo = "PriceInfoTableViewCell"
+        static let title = "TitleTableViewCell"
+        static let attribute = "AttributeTableViewCell"
+        static let description = "DescriptionTableViewCell"
+        static let productCode = "ProductCodeTableViewCell"
+    }
+    
+    struct segues {
+    
+        static let galleryContent = "GalleryContent"
+    }
+}
+
 class ProductTableViewController: UITableViewController {
     
     var dataSource: [ProductDetailPresenter] = []
@@ -16,16 +42,23 @@ class ProductTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupTableView() {
+    
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         
-        tableView.register(UINib(nibName: "PriceInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceInfoTableViewCell")
-        tableView.register(UINib(nibName: "TitleTableViewCell", bundle: nil), forCellReuseIdentifier: "TitleTableViewCell")
-        tableView.register(UINib(nibName: "AttributeTableViewCell", bundle: nil), forCellReuseIdentifier: "AttributeTableViewCell")
-        tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
-        tableView.register(UINib(nibName: "ProductCodeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductCodeTableViewCell")
+        tableView.register(UINib(nibName: Config.nibName.priceInfo, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.title)
+        tableView.register(UINib(nibName: Config.nibName.title, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.priceInfo)
+        tableView.register(UINib(nibName: Config.nibName.attribute, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.attribute)
+        tableView.register(UINib(nibName: Config.nibName.description, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.description)
+        tableView.register(UINib(nibName: Config.nibName.productCode, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.productCode)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,27 +79,27 @@ class ProductTableViewController: UITableViewController {
         
         switch presenter {
         case let presenter as  PriceInfoCellPresenter:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "PriceInfoTableViewCell", for: indexPath) as? PriceInfoTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Config.cellIdentifiers.priceInfo, for: indexPath) as? PriceInfoTableViewCell {
                 cell.presenter = presenter
                 return cell
             }
         case let presenter as  TitleCellPresenter:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell", for: indexPath) as? TitleTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Config.cellIdentifiers.title, for: indexPath) as? TitleTableViewCell {
                 cell.presenter = presenter
                 return cell
             }
         case let presenter as  AttributeCellPresenter:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "AttributeTableViewCell", for: indexPath) as? AttributeTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Config.cellIdentifiers.attribute, for: indexPath) as? AttributeTableViewCell {
                 cell.presenter = presenter
                 return cell
             }
         case let presenter as  DescriptionCellPresenter:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as? DescriptionTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Config.cellIdentifiers.description, for: indexPath) as? DescriptionTableViewCell {
                 cell.presenter = presenter
                 return cell
             }
         case let presenter as  ProductCodeCellPresenter:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCodeTableViewCell", for: indexPath) as? ProductCodeTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Config.cellIdentifiers.productCode, for: indexPath) as? ProductCodeTableViewCell {
                 cell.presenter = presenter
                 return cell
             }
@@ -87,7 +120,7 @@ class ProductTableViewController: UITableViewController {
         }
         
         switch identifier {
-        case "GalleryContent":
+        case Config.segues.galleryContent:
             galleryViewController = segue.destination as? GalleryViewController
         default: break
         }

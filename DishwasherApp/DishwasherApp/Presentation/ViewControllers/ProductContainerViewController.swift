@@ -8,6 +8,15 @@
 
 import UIKit
 
+private struct Config {
+    
+    struct segues {
+        
+        static let masterContent = "MasterContent"
+        static let detailContent = "DetailContent"
+    }
+}
+
 class ProductContainerViewController: UIViewController {
     
     enum LayoutType {
@@ -89,10 +98,10 @@ class ProductContainerViewController: UIViewController {
         }
         
         switch identifier {
-        case "MasterContent":
+        case Config.segues.masterContent:
             productTableViewController = segue.destination as? ProductTableViewController
             
-        case "DetailContent":
+        case Config.segues.detailContent:
             productDetailTableViewController = segue.destination as? ProductTableViewController
         default: break
         }
