@@ -12,29 +12,33 @@ import XCTest
 class ProductDetailPresenterTests: XCTestCase {
     
     func testPriceInfoCellPresenter() {
-        let productDetail = testableProductDetail()
         
+        let productDetail = testableProductDetail()
         let priceInfoCellPresenter = PriceInfoCellPresenter(productDetail: productDetail)
+        
         XCTAssertEqual(priceInfoCellPresenter.title, "£\u{00A0}39.95") //\u{00A0} is a non breaking space
         XCTAssertEqual(priceInfoCellPresenter.priorityMessage, "We have a special offer")
         XCTAssertEqual(priceInfoCellPresenter.description, "This is our guarantee\nThis is our second guarantee\nThis is our third guarantee")
     }
     
     func testDescriptionCellPresenter() {
-        let productDetail = testableProductDetail()
         
+        let productDetail = testableProductDetail()
         let descriptionCellPresenter = DescriptionCellPresenter(productDetail: productDetail)
+        
         XCTAssertEqual(descriptionCellPresenter.text, "info here for product")
     }
 
     func testProductCodeCellPresenter() {
-        let productDetail = testableProductDetail()
         
+        let productDetail = testableProductDetail()
         let productCodeCellPresenter = ProductCodeCellPresenter(productDetail: productDetail)
+        
         XCTAssertEqual(productCodeCellPresenter.text, "Product code: zxcvbnm")
     }
 
     func testAttributeCellPresenter() {
+        
         let productDetail = testableProductDetail()
         
         guard let feature = productDetail.features.first else {
@@ -62,6 +66,7 @@ class ProductDetailPresenterTests: XCTestCase {
     // MARK:- Helpers
     
     private func testableProductDetail() -> ProductDetail {
+        
         let price = Price(now: "39.95", currency: "GBP")
         let productAttribute = ProductAttribute(identifier: "1a2b3c4d5e6f7", name: "Test Detail", value: "A x B x C")
         let secondProductAttribute = ProductAttribute(identifier: "1a2b3c4d5e6f7", name: "Some kind of valve", value: "Check Valve 15mm")

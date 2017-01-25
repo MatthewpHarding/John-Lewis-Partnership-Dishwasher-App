@@ -12,6 +12,7 @@ import XCTest
 class HTTPRequestTest: XCTestCase {
     
     func testSuccessfulStatusCode() {
+        
         XCTAssertFalse(HTTPStatusCodeDomain.isSuccessful(rawStatusCode:100))
         XCTAssertFalse(HTTPStatusCodeDomain.isSuccessful(rawStatusCode:199))
         
@@ -22,5 +23,4 @@ class HTTPRequestTest: XCTestCase {
         XCTAssertFalse(HTTPStatusCodeDomain.isSuccessful(rawStatusCode:400))
         XCTAssertFalse(HTTPStatusCodeDomain.isSuccessful(rawStatusCode:500))
     }
-    
 }

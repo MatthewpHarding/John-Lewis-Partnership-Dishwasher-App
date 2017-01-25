@@ -14,11 +14,11 @@ struct URLRequestExecuterMock: URLRequestExecution {
     let response: (Void) -> (Data?, URLResponse?, Error?)
     
     func executeURLRequest(urlRequest: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        
         let generatedResponse = response()
         let data = generatedResponse.0
         let urlResponse = generatedResponse.1
         let error = generatedResponse.2
         completion(data, urlResponse, error)
     }
-    
 }

@@ -12,6 +12,7 @@ import XCTest
 class RemoteProductAPIParserTests: XCTestCase  {
     
     func testProduct() {
+        
         guard let jsonObject = generateJsonObject(filename: "SearchResult-Dishwasher") else {
             XCTFail("Could not deserialize the data from the json file")
             return
@@ -42,6 +43,7 @@ class RemoteProductAPIParserTests: XCTestCase  {
     }
 
     func testProductDetail() {
+        
         guard let jsonObject = generateJsonObject(filename: "ProductDetail-Dishwasher") else {
             XCTFail("Could not deserialize the data from the json file")
             return
@@ -84,6 +86,7 @@ class RemoteProductAPIParserTests: XCTestCase  {
     // MARK:- Helper Methods
     
     private func loadFile(filename: String, ofType: String) -> Data? {
+        
         let bundle = Bundle(for: type(of: self))
         
         guard
@@ -104,6 +107,7 @@ class RemoteProductAPIParserTests: XCTestCase  {
     }
     
     private func generateJsonObject(filename: String) -> Any? {
+        
         guard let data = loadFile(filename: filename, ofType: "json") else {
             XCTFail("Could not load the test json file")
             return nil
@@ -119,5 +123,4 @@ class RemoteProductAPIParserTests: XCTestCase  {
         
         return jsonObject
     }
-    
 }

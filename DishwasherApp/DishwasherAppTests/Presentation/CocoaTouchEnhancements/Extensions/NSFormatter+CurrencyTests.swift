@@ -12,6 +12,7 @@ import XCTest
 class NSFormatter_CurrencyTests: XCTestCase {
 
     func testInternationalCurrencyCode() {
+        
         // \u{00A0} is a non breaking white space
         executeAndTestFormattedCurrency(internationalCurrencyCode:"GBP", input:"1.99", expected:"£\u{00A0}1.99")
         executeAndTestFormattedCurrency(internationalCurrencyCode:"GBP", input:"0.99", expected:"£\u{00A0}0.99")
@@ -27,6 +28,7 @@ class NSFormatter_CurrencyTests: XCTestCase {
     }
     
     private func executeAndTestFormattedCurrency(internationalCurrencyCode: String, input: String, expected: String) {
+        
         let currencyFormatter = NumberFormatter(internationalCurrencyCode: internationalCurrencyCode)
         XCTAssertEqual(currencyFormatter.string(from: input), expected)
     }

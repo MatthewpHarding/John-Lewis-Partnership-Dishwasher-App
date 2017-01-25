@@ -42,11 +42,11 @@ class NetworkingErrorTests: XCTestCase {
     func testNSURLErrorUnknown() {
         
         let urlError = NSError(domain: NSURLErrorDomain, code: Int.max, userInfo: nil)
-        if case .unknown = NetworkingError(urlError: urlError) {
+        let networkingError = NetworkingError(urlError: urlError)
+        if case .unknown = networkingError {
             // success
         } else {
             XCTFail("Failed to convert NSError")
         }
     }
-    
 }
