@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39F3F454AC017C2B88447580 /* Pods_DishwasherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99612995AB09D16967452979 /* Pods_DishwasherApp.framework */; };
+		5459750B1E39419100BB3BE1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459750A1E39419100BB3BE1 /* ImageViewController.swift */; };
 		54692FC11E3835DE009369FD /* NSLocale+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FC01E3835DE009369FD /* NSLocale+Currency.swift */; };
 		54692FC31E383902009369FD /* NSFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FC21E383902009369FD /* NSFormatter+Currency.swift */; };
 		54692FCC1E38A703009369FD /* NSFormatter+CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54692FCA1E38A703009369FD /* NSFormatter+CurrencyTests.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5459750A1E39419100BB3BE1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		54692FC01E3835DE009369FD /* NSLocale+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+Currency.swift"; sourceTree = "<group>"; };
 		54692FC21E383902009369FD /* NSFormatter+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFormatter+Currency.swift"; sourceTree = "<group>"; };
 		54692FCA1E38A703009369FD /* NSFormatter+CurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFormatter+CurrencyTests.swift"; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 			children = (
 				546B70B91E37EFA30005DF3B /* ProductContainerViewController.swift */,
 				546B70A91E37E4860005DF3B /* GalleryViewController.swift */,
+				5459750A1E39419100BB3BE1 /* ImageViewController.swift */,
 				546B70A41E37E43C0005DF3B /* ProductTableViewController.swift */,
 				548295791E355E8300F5EA9E /* SearchViewController.swift */,
 			);
@@ -746,6 +749,7 @@
 				5482955F1E35202000F5EA9E /* Price+Decodable.swift in Sources */,
 				546B70B51E37EC3E0005DF3B /* DescriptionTableViewCell.swift in Sources */,
 				548295371E34F34400F5EA9E /* JSONSerializer.swift in Sources */,
+				5459750B1E39419100BB3BE1 /* ImageViewController.swift in Sources */,
 				5479996A1E34CAAB004565E1 /* URLRequestExecution.swift in Sources */,
 				5482955A1E351BAA00F5EA9E /* RemoteProductAPIParser.swift in Sources */,
 				5479996C1E34E0D8004565E1 /* HTTPRequest.swift in Sources */,
