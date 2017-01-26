@@ -52,8 +52,8 @@ class ProductTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         
-        tableView.register(UINib(nibName: Config.nibName.priceInfo, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.title)
-        tableView.register(UINib(nibName: Config.nibName.title, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.priceInfo)
+        tableView.register(UINib(nibName: Config.nibName.priceInfo, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.priceInfo)
+        tableView.register(UINib(nibName: Config.nibName.title, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.title)
         tableView.register(UINib(nibName: Config.nibName.attribute, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.attribute)
         tableView.register(UINib(nibName: Config.nibName.description, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.description)
         tableView.register(UINib(nibName: Config.nibName.productCode, bundle: nil), forCellReuseIdentifier: Config.cellIdentifiers.productCode)
@@ -108,7 +108,7 @@ class ProductTableViewController: UITableViewController {
         }
         return UITableViewCell()
     }
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
