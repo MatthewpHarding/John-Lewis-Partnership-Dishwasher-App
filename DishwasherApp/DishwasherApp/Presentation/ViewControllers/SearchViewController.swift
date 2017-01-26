@@ -8,6 +8,14 @@
 
 import UIKit
 
+private struct Config {
+    
+    struct nibName {
+        
+        static let loadingViewController = "LoadingViewController"
+    }
+}
+
 class SearchViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -16,6 +24,8 @@ class SearchViewController: UIViewController {
     let remoteProductAPI: RemoteProductAPI = FeatureFactory.remoteProductAPI()
     var searchResult: SearchResult?
     var datasource: [ProductPresenter] = []
+    
+    var loadingViewController: LoadingViewController?
     
     // MARK:- UIViewController Overrides
     
@@ -99,9 +109,11 @@ extension SearchViewController {
     
     fileprivate func refresh(withSearchTerm searchTerm: String) {
         
+        displayLoadingView()
         remoteProductAPI.search(for: searchTerm) { [weak self] result in
             
             DispatchQueue.main.async()  {  [weak self] in
+                
                 guard let strongSelf = self else {
                     return
                 }
@@ -111,11 +123,50 @@ extension SearchViewController {
                     strongSelf.searchResult = searchResult
                     strongSelf.datasource = strongSelf.generateDataSource(withSearchResult: searchResult)
                     strongSelf.reloadData()
+                    strongSelf.hideLoadingView()
                     
                 case .error: break
-                    // TODO display a retry screen
+                    strongSelf.loadingViewController?.stopRefreshing()
                 }
             }
         }
+    }
+}
+
+// MARK:- Loading
+
+extension SearchViewController: LoadingViewControllerDelegate {
+    
+    func retry(forLoadingViewController: LoadingViewController) {
+
+        refresh(withSearchTerm: searchTerm)
+    }
+    
+    fileprivate func hideLoadingView() {
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [weak self] in
+            self?.loadingViewController?.view.alpha = 0.0
+        }) { [weak self] _ in
+            self?.loadingViewController?.view.removeFromSuperview()
+            self?.loadingViewController = nil
+        }
+    }
+    
+    fileprivate func displayLoadingView() {
+        
+        if let loadingViewController = self.loadingViewController {
+            loadingViewController.startRefreshing()
+            return
+        }
+        
+        let loadingViewController = LoadingViewController(nibName: Config.nibName.loadingViewController, bundle: nil)
+        loadingViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        loadingViewController.view.frame.size = view.bounds.size
+        
+        add(loadingViewController, toView: self.view)
+        
+        loadingViewController.delegate = self
+        loadingViewController.startRefreshing(whileHidingContent: true)
+        self.loadingViewController = loadingViewController
     }
 }

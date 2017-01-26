@@ -15,6 +15,11 @@ private struct Config {
         static let masterContent = "MasterContent"
         static let detailContent = "DetailContent"
     }
+    
+    struct nibName {
+        
+        static let loadingViewController = "LoadingViewController"
+    }
 }
 
 class ProductContainerViewController: UIViewController {
@@ -39,10 +44,13 @@ class ProductContainerViewController: UIViewController {
     var productDetail: ProductDetail?
     var productIdentifier: String?
     
+    var loadingViewController: LoadingViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let productIdentifier = self.productIdentifier {
+            displayLoadingView()
             refresh(withProductIdentifier: productIdentifier)
         }
     }
@@ -245,23 +253,66 @@ extension ProductContainerViewController {
     
     fileprivate func refresh(withProductIdentifier productIdentifier: String) {
         
+        displayLoadingView()
         remoteProductAPI.getDetails(for: productIdentifier) { [weak self] result in
             
             DispatchQueue.main.async()  { [weak self] in
+                
+                guard let strongSelf = self else {
+                    return
+                }
+                
                 switch result {
+                    
                 case .success(let productDetail):
-                    
-                    guard let strongSelf = self else {
-                        return
-                    }
-                    
                     strongSelf.productDetail = productDetail
                     strongSelf.reload()
+                    strongSelf.hideLoadingView()
                     
                 case .error: break
-                    // TODO display a retry screen
+                    strongSelf.loadingViewController?.stopRefreshing()
                 }
             }
         }
+    }
+}
+
+// MARK:- Loading
+
+extension ProductContainerViewController: LoadingViewControllerDelegate {
+    
+    func retry(forLoadingViewController: LoadingViewController) {
+        
+        if let productIdentifier = self.productIdentifier {
+            refresh(withProductIdentifier: productIdentifier)
+        }
+    }
+    
+    fileprivate func hideLoadingView() {
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [weak self] in
+            self?.loadingViewController?.view.alpha = 0.0
+        }) { [weak self] _ in
+            self?.loadingViewController?.view.removeFromSuperview()
+            self?.loadingViewController = nil
+        }
+    }
+    
+    fileprivate func displayLoadingView() {
+        
+        if let loadingViewController = self.loadingViewController {
+            loadingViewController.startRefreshing()
+            return
+        }
+        
+        let loadingViewController = LoadingViewController(nibName: Config.nibName.loadingViewController, bundle: nil)
+        loadingViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        loadingViewController.view.frame.size = view.bounds.size
+        
+        add(loadingViewController, toView: self.view)
+        
+        loadingViewController.delegate = self
+        loadingViewController.startRefreshing(whileHidingContent: true)
+        self.loadingViewController = loadingViewController
     }
 }
