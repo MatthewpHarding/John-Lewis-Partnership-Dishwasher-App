@@ -1,0 +1,8 @@
+platform :ios, '10.0'
+workspace 'DishwasherApp'
+target 'DishwasherApp' do
+use_frameworks!
+pod 'Argo'
+pod 'Curry'
+pod 'KingfisherExtension', '~> 1.0.1'
+end
