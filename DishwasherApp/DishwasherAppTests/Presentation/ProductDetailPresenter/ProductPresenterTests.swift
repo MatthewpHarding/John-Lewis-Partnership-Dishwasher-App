@@ -12,6 +12,7 @@ import XCTest
 class ProductPresenterTests: XCTestCase {
     
     func testProductPresenter() {
+        
         guard let product = testableProduct() else {
             XCTFail("Could not successfuly generate a Product to test")
             return
@@ -26,6 +27,7 @@ class ProductPresenterTests: XCTestCase {
     // MARK:- Helpers
     
     private func testableProduct() -> Product? {
+        
         guard let imageUrl = URL(string: "https://api.johnlewis.com") else {
             XCTFail("Could not successfuly generate a URL")
             return nil

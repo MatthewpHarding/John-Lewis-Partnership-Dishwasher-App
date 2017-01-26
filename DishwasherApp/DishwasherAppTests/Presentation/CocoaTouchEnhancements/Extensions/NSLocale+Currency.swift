@@ -12,6 +12,7 @@ import XCTest
 class NSLocale_CurrencyTests: XCTestCase {
     
     func testInternationalCurrencyCode() {
+        
         executeAndTest(internationalCurrencyCode: "GBP", expectedCurrencySymbol: "£")
         executeAndTest(internationalCurrencyCode: "USD", expectedCurrencySymbol: "US$")
         executeAndTest(internationalCurrencyCode: "AUD", expectedCurrencySymbol: "A$")
@@ -19,10 +20,10 @@ class NSLocale_CurrencyTests: XCTestCase {
     }
     
     private func executeAndTest(internationalCurrencyCode: String, expectedCurrencySymbol: String) {
+        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.currency
         numberFormatter.locale = NSLocale(internationalCurrencyCode: internationalCurrencyCode) as Locale
         XCTAssertEqual(numberFormatter.currencySymbol, expectedCurrencySymbol)
     }
-    
 }

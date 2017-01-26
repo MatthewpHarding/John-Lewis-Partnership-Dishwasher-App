@@ -12,6 +12,7 @@ import XCTest
 class JSONSerializationManagerTests: XCTestCase {
     
     func testDataWithArray() {
+        
         let testArray = ["element1", "element2", "element3"]
         let jsonSerializationManager = JSONSerializationManager()
         
@@ -45,6 +46,7 @@ class JSONSerializationManagerTests: XCTestCase {
     }
     
     func testDataWithDictionary() {
+        
         let testDictionary = ["key1": "element1", "key2": "element2", "key3": "element3"]
         let jsonSerializationManager = JSONSerializationManager()
         

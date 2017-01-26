@@ -8,6 +8,15 @@
 
 import UIKit
 
+private struct Config {
+    
+    struct segues {
+        
+        static let masterContent = "MasterContent"
+        static let detailContent = "DetailContent"
+    }
+}
+
 class ProductContainerViewController: UIViewController {
     
     enum LayoutType {
@@ -46,11 +55,6 @@ class ProductContainerViewController: UIViewController {
         layoutContainerViews(for: layoutType, withSize: size)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         setLayoutType(for: size)
@@ -65,6 +69,7 @@ class ProductContainerViewController: UIViewController {
     }
     
     private func setLayoutType(for size: CGSize) {
+        
         let shouldDisplayMoreDetailsContainer = size.width > size.height ? true : false
         layoutType = shouldDisplayMoreDetailsContainer ? .split : .full
     }
@@ -85,6 +90,7 @@ class ProductContainerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard
             let identifier = segue.identifier
             else {
@@ -92,10 +98,10 @@ class ProductContainerViewController: UIViewController {
         }
         
         switch identifier {
-        case "MasterContent":
+        case Config.segues.masterContent:
             productTableViewController = segue.destination as? ProductTableViewController
             
-        case "DetailContent":
+        case Config.segues.detailContent:
             productDetailTableViewController = segue.destination as? ProductTableViewController
         default: break
         }
@@ -238,6 +244,7 @@ extension ProductContainerViewController {
 extension ProductContainerViewController {
     
     fileprivate func refresh(withProductIdentifier productIdentifier: String) {
+        
         remoteProductAPI.getDetails(for: productIdentifier) { [weak self] result in
             
             DispatchQueue.main.async()  { [weak self] in

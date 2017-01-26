@@ -11,5 +11,4 @@ import Foundation
 protocol URLRequestExecution {
     
     func executeURLRequest(urlRequest: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
-    
 }

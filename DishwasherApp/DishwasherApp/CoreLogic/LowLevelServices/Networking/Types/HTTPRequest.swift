@@ -65,13 +65,15 @@ enum HTTPStatusCode: Int {
 
 // https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 enum HTTPStatusCodeDomain: Int {
+    
     case informational = 100
     case success = 200
     case redirectional = 300
     case clientError = 400
     case serverError = 500
     
-    static func isSuccessful(rawStatusCode: Int) -> Bool{
+    static func isSuccessful(rawStatusCode: Int) -> Bool {
+        
         if rawStatusCode >= success.rawValue && rawStatusCode < redirectional.rawValue {
             return true
         }
@@ -80,6 +82,7 @@ enum HTTPStatusCodeDomain: Int {
 }
 
 enum HTTPMethod: String {
+    
     case get = "GET"
     case post = "POST"
     case put = "PUT"

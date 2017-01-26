@@ -8,13 +8,11 @@
 
 import Foundation
 
-
 // Utilise a ghost protocol for type safety
-protocol ProductDetailPresenter {
-    
-}
+protocol ProductDetailPresenter { }
 
 struct PriceInfoCellPresenter: ProductDetailPresenter {
+    
     let title: String
     let priorityMessage: String?
     let description: String
@@ -44,30 +42,37 @@ struct PriceInfoCellPresenter: ProductDetailPresenter {
 }
 
 struct TitleCellPresenter: ProductDetailPresenter {
+    
     let title: String
 }
 
 struct DescriptionCellPresenter: ProductDetailPresenter {
+    
     let text: String
     
     init(productDetail: ProductDetail) {
+        
         text = productDetail.information
     }
 }
 
 struct ProductCodeCellPresenter: ProductDetailPresenter {
+    
     let text: String
     
     init(productDetail: ProductDetail) {
+        
         text = String(format: NSLocalizedString("Product code: %@", comment:""), productDetail.code)
     }
 }
 
 struct AttributeCellPresenter: ProductDetailPresenter {
+    
     let leftText: String
     let rightText: String
     
     init(productAttribute: ProductAttribute) {
+        
         leftText = productAttribute.name
         rightText = productAttribute.value
     }

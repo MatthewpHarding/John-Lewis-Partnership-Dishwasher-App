@@ -26,16 +26,12 @@ class SearchViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         refresh(withSearchTerm: searchTerm)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard
             let identifier = segue.identifier
             else {
@@ -59,11 +55,13 @@ class SearchViewController: UIViewController {
     // MARK:- Reload Data
     
     fileprivate func reloadData() {
+        
         self.navigationItem.title = String(format: NSLocalizedString("%@ (%li)", comment: ""), searchTerm, searchResult?.results ?? 0)
         collectionView.reloadData()
     }
     
     fileprivate func generateDataSource(withSearchResult searchResult: SearchResult) -> [ProductPresenter] {
+        
         return searchResult.products.map({ ProductPresenter(product: $0) })
     }
 }
@@ -73,10 +71,12 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        
         return datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell,
             let presenter = datasource[safe: indexPath.row]
@@ -98,6 +98,7 @@ extension SearchViewController: UICollectionViewDataSource {
 extension SearchViewController {
     
     fileprivate func refresh(withSearchTerm searchTerm: String) {
+        
         remoteProductAPI.search(for: searchTerm) { [weak self] result in
             
             DispatchQueue.main.async()  {  [weak self] in

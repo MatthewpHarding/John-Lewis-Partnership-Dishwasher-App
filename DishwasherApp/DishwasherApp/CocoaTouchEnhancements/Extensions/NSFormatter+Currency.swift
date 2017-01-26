@@ -11,6 +11,7 @@ import Foundation
 extension NumberFormatter {
     
     convenience init(internationalCurrencyCode: String) {
+        
         self.init()
         numberStyle = NumberFormatter.Style.currency
         locale = NSLocale(internationalCurrencyCode: internationalCurrencyCode) as Locale
@@ -20,6 +21,7 @@ extension NumberFormatter {
     }
     
     func string(from priceString: String) -> String? {
+        
         let price = NSDecimalNumber(string: priceString)
         return string(from: price)
     }

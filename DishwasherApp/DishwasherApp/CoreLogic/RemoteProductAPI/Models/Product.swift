@@ -9,6 +9,7 @@
 import Foundation
 
 struct Product {
+    
     let identifier: String
     let title: String
     let price: Price

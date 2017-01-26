@@ -14,6 +14,7 @@ class NetworkingManagerTest: XCTestCase {
     // MARK:- Result Enum
     
     func testSuccessfulResults() {
+        
         executeAndTestRequest(withStatusCode: 100, success: false)
         executeAndTestRequest(withStatusCode: 199, success: false)
         executeAndTestRequest(withStatusCode: 200, success: true)
@@ -24,6 +25,7 @@ class NetworkingManagerTest: XCTestCase {
     }
     
     private func executeAndTestRequest(withStatusCode statusCode: Int, success: Bool) {
+        
         let callbackExpectation = expectation(description: "Networking Manager executeRequest")
 
         executeRequest(responseBody: nil, statusCode: statusCode) { result in
@@ -51,6 +53,7 @@ class NetworkingManagerTest: XCTestCase {
     // MARK:- Response Data
     
     func testDeserializedResponse() {
+        
         let callbackExpectation = expectation(description: "Networking Manager executeRequest")
         
         let testResponse = ["key1": "element1", "key2": "element2", "key3": "element3"]

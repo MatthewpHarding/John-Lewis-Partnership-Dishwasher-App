@@ -10,12 +10,13 @@ import UIKit
 import Kingfisher
 
 class ProductCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     
-    var imageUrl: URL? {
-        didSet {
+    var imageUrl: URL? { didSet {
+        
             guard let url = imageUrl else {
                 cancelImageDownload()
                 return
@@ -33,6 +34,4 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private func cancelImageDownload() {
         imageView.kf.cancelDownloadTask()
     }
-
-    
 }

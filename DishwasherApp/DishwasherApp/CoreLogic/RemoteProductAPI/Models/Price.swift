@@ -9,6 +9,7 @@
 import Foundation
 
 struct Price {
+    
     let now: String
     let currency: String
 }

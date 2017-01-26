@@ -14,6 +14,7 @@ import XCTest
 class RemoteProductAPITests: XCTestCase {
     
     func testSearchWithSuccessfulResponse() {
+        
         let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         let product = testableProduct()
@@ -43,6 +44,7 @@ class RemoteProductAPITests: XCTestCase {
     }
 
     func testSearchParsingError() {
+        
         let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         // Generate Testable Search Result
@@ -50,6 +52,7 @@ class RemoteProductAPITests: XCTestCase {
         let networkingResponseResult: Result<Any?, NetworkingError> = .success(nil)
         
         executeSearch(for: "Dishwasher", parserResult: parserResponseResult, networkingResult: networkingResponseResult) { result in
+            
             switch result {
             case .success:
                 XCTFail("Remote Product API returned a successful response when an error was expected")
@@ -85,6 +88,7 @@ class RemoteProductAPITests: XCTestCase {
     }
     
     private func executeAndTestSuccessfulSearch(for term: String) {
+        
         let callbackExpectation = expectation(description: "RemoteProductAPI executeSearch")
         
         let product = testableProduct()
@@ -94,6 +98,7 @@ class RemoteProductAPITests: XCTestCase {
         let networkingResponseResult: Result<Any?, NetworkingError> = .success(nil)
         
         executeSearch(for: term, parserResult: parserResponseResult, networkingResult: networkingResponseResult) { result in
+            
             switch result {
             case .success: break
             case .error(let remoteProductAPIError):
@@ -133,6 +138,7 @@ class RemoteProductAPITests: XCTestCase {
     }
     
     private func testableProduct() -> Product {
+        
         let price = Price(now: "39.95", currency: "GBP")
         guard let imageURL = URL(string: "https://api.johnlewis.com/images/1") else {
             XCTFail("Could not successfuly generate a URL")
@@ -147,15 +153,16 @@ class RemoteProductAPITests: XCTestCase {
 extension RemoteProductAPITests {
 
     func testProductDetailWithSuccessfulResponse() {
+        
         let callbackExpectation = expectation(description: "RemoteProductAPI getDetails")
         
         let productDetail = testableProductDetail()
-        
         let parserResponseResult: Result<ProductDetail, ProductParserError> = .success(productDetail)
         let networkingResponseResult: Result<Any?, NetworkingError> = .success(nil)
         
         getDetails(for: "id123456789", parserResult: parserResponseResult, networkingResult: networkingResponseResult) { result in
             switch result {
+                
             case .success(let recievedProductDetail):
                 XCTAssertEqual(productDetail.title, recievedProductDetail.title)
                 XCTAssertEqual(productDetail.code, recievedProductDetail.code)
@@ -179,7 +186,6 @@ extension RemoteProductAPITests {
     private func getDetails(for productIdentifier: String, parserResult: Result<ProductDetail, ProductParserError>, networkingResult: Result<Any?, NetworkingError>, completion: @escaping (Result<ProductDetail, RemoteProductAPIError>) -> Void) {
         
         let networking = NetworkingMock(responseResult: networkingResult)
-        
         var productParser = ProductParserMock()
         productParser.productDetailResult = parserResult
         
@@ -192,6 +198,7 @@ extension RemoteProductAPITests {
     }
     
     private func testableProductDetail() -> ProductDetail {
+        
         let price = Price(now: "39.95", currency: "GBP")
         let productAttribute = ProductAttribute(identifier: "1a2b3c4d5e6f7", name: "Test Detail", value: "A x B x C")
         let feature = ProductFeature(name: "Test Feature", attributes: [productAttribute])
@@ -203,5 +210,4 @@ extension RemoteProductAPITests {
         
         return ProductDetail(title: "Product DetailX", price: price, code: "zxcvbnm", imageURLs: [imageURL], information: "info here for product", specialOffer: "We have a special offer", includedServices: ["This is our guarantee"], features: [feature])
     }
-    
 }

@@ -11,6 +11,7 @@ import Foundation
 extension NSLocale {
     
     convenience init(internationalCurrencyCode: String) {
+        
         let localeIdentifier = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.currencyCode.rawValue : internationalCurrencyCode])
         self.init(localeIdentifier: localeIdentifier)
     }

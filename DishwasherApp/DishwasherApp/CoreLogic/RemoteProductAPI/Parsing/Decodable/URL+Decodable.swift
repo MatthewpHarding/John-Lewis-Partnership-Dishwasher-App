@@ -12,7 +12,9 @@ import Argo
 extension URL: Decodable {
     
     public static func decode(_ json: JSON) -> Decoded<URL> {
+        
         switch(json) {
+            
         case let .string(path):
             return .fromOptional(URL(string: path, relativeTo: URL(string: "https://")))
         default:
