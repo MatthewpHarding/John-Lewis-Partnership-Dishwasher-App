@@ -21,16 +21,28 @@ extension ProductDetail: Decodable {
             <*> json <| "price"
             <*> json <| "code"
         
+                var html: String = ""
+                if case let .object(dictionary) = json,
+                    let detailsDictionary = dictionary["details"],
+                    case let .object(productInfoDictionary) = detailsDictionary,
+                    let productInfo = productInfoDictionary["productInformation"],
+                    case let .string(productInformationWithHTML) = productInfo
+                {
+                    html = productInformationWithHTML.removingHTMLFormatting()
+                }
+        
         let secondSet = firstSet
             <*> json <|| ["media", "images", "urls"]
-            <*> json <| ["details", "productInformation"]
+            <*> pure(html)
             <*> json <|? "displaySpecialOffer"
         
         return secondSet
             <*> json <|| ["additionalServices", "includedServices"]
             <*> json <|| ["details", "features"]
     }
+    
 }
+
 
 extension ProductFeature: Decodable {
     
